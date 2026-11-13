@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <!-- ===== SAHIFA SOZLAMALARI (ko'rinmaydi, lekin brauzer va Telegram uchun muhim) ===== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunnatjon Gulboyev — bo‘lajak dasturchi</title>
+  <meta name="description" content="Sunnatjon Gulboyev — 9-sinf o‘quvchisi va bo‘lajak dasturchi. Qiziqishlarim, o‘rganish yo‘lim, loyihalarim va aloqa.">
+  <meta name="theme-color" content="#0c0808">
+
+  <!-- Telegram/Instagramda havola yuborilganda chiqadigan ko'rinish -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uz_UZ">
+  <meta property="og:title" content="Sunnatjon Gulboyev — bo‘lajak dasturchi">
+  <meta property="og:description" content="Mening shaxsiy saytim: qiziqishlarim, dasturchi yo‘lim va men bilan bog‘lanish.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- JavaScript borligini darhol belgilaymiz (sahifa "lip" etib ketmasligi uchun) -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Shriftlar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="images/profil-hero.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip" href="#asosiy">Asosiy qismga o‘tish</a>
+
+  <!-- ===== YUKLANISH EKRANI ===== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <p class="loader__cmd"><span class="t-prompt">$</span> sunnatjon --start</p>
+      <div class="loader__count"><span id="loader-count">0</span>%</div>
+      <div class="loader__bar"><span id="loader-bar"></span></div>
+    </div>
+  </div>
+
+  <!-- ===== ORQA FON: kodlar, chartlar va sxemalar (faqat bezak) ===== -->
+  <div class="tech-bg" aria-hidden="true">
+    <svg class="tb tb-circuit tb--flip" style="top:1.5%; right:-30px" data-speed="0.12" viewBox="0 0 320 220">
+      <path d="M0 40H80L100 60H180L200 40H320M0 90H60L80 110H150M0 140H120L140 120H220L240 140H320M30 220V180L50 160H110M200 220V190L220 170H320"/>
+      <path class="flow" d="M0 40H80L100 60H180L200 40H320M0 140H120L140 120H220L240 140H320"/>
+      <circle cx="150" cy="110" r="4"/><circle cx="110" cy="160" r="4"/><circle cx="180" cy="60" r="3"/><circle cx="220" cy="120" r="3"/>
+    </svg>
+
+    <pre class="tb tb-code" style="top:5%; left:1.5%" data-speed="0.2"><span class="c">// men.js</span>
+<span class="k">const</span> dasturchi = {
+  ism: <span class="s">"Sunnatjon"</span>,
+  sinf: <span class="n">9</span>,
+  shahar: <span class="s">"Jizzax"</span>,
+  orzu: <span class="s">"Dasturchi"</span>,
+};<span class="caret">▋</span></pre>
+
+    <svg class="tb tb-chart" style="top:22.5%; right:2%" data-speed="0.16" viewBox="0 0 240 140">
+      <text x="0" y="10">o‘sish.log</text>
+      <path class="grid" d="M0 40H240M0 70H240M0 100H240M0 130H240"/>
+      <path class="area" d="M0 120L30 104L60 110L90 82L120 88L150 60L180 68L210 40L240 26V140H0Z"/>
+      <path class="line" d="M0 120L30 104L60 110L90 82L120 88L150 60L180 68L210 40L240 26"/>
+      <circle cx="210" cy="40" r="3"/><circle cx="240" cy="26" r="3"/>
+    </svg>
+
+    <svg class="tb tb-bars" style="top:25.5%; left:2.5%" data-speed="0.1" viewBox="0 0 180 120">
+      <text x="0" y="10">bilim / hafta</text>
+      <rect x="0" y="80" width="14" height="40"/><rect x="22" y="70" width="14" height="50"/>
+      <rect x="44" y="74" width="14" height="46"/><rect x="66" y="56" width="14" height="64"/>
+      <rect x="88" y="60" width="14" height="60"/><rect x="110" y="42" width="14" height="78"/>
+      <rect x="132" y="34" width="14" height="86"/><rect x="154" y="20" width="14" height="100"/>
+    </svg>
+
+    <pre class="tb tb-code" style="top:30%; right:1.5%" data-speed="0.22"><span class="k">function</span> <span class="f">organ</span>(kunlar) {
+  <span class="k">let</span> bilim = <span class="n">0</span>;
+  <span class="k">while</span> (kunlar--) {
+    bilim++;
+  }
+  <span class="k">return</span> <span class="s">"🚀 tayyor"</span>;
+}</pre>
+
+    <svg class="tb tb-donut" style="top:36%; left:3%" data-speed="0.14" viewBox="0 0 120 120">
+      <circle class="track" cx="60" cy="60" r="44"/>
+      <circle class="arc" cx="60" cy="60" r="44"/>
+      <text x="60" y="58" text-anchor="middle" class="big">70%</text>
+      <text x="60" y="76" text-anchor="middle">kod</text>
+    </svg>
+
+    <div class="tb tb-window" style="top:42%; right:2%" data-speed="0.18">
+      <div class="tb-window__bar"><i></i><i></i><i></i><b>dashboard.html</b></div>
+      <span style="width:70%"></span><span style="width:45%"></span>
+      <div class="tb-window__row"><em></em><em></em></div>
+      <span style="width:85%"></span><span style="width:60%"></span>
+      <svg viewBox="0 0 160 40"><path d="M0 34L20 30L40 32L60 20L80 24L100 12L120 16L140 6L160 8"/></svg>
+    </div>
+
+    <pre class="tb tb-code" style="top:48%; left:1.5%" data-speed="0.2">&lt;<span class="k">section</span> <span class="f">id</span>=<span class="s">"profil"</span>&gt;
+  &lt;<span class="k">h1</span>&gt;Salom, dunyo!&lt;/<span class="k">h1</span>&gt;
+  &lt;<span class="k">p</span>&gt;Men kod yozaman&lt;/<span class="k">p</span>&gt;
+&lt;/<span class="k">section</span>&gt;</pre>
+
+    <svg class="tb tb-circuit" style="top:55%; left:-30px" data-speed="0.12" viewBox="0 0 320 220">
+      <path d="M0 40H80L100 60H180L200 40H320M0 90H60L80 110H150M0 140H120L140 120H220L240 140H320M30 220V180L50 160H110M200 220V190L220 170H320"/>
+      <path class="flow" d="M0 90H60L80 110H150M30 220V180L50 160H110M200 220V190L220 170H320"/>
+      <circle cx="150" cy="110" r="4"/><circle cx="110" cy="160" r="4"/><circle cx="180" cy="60" r="3"/><circle cx="220" cy="120" r="3"/>
+    </svg>
+
+    <pre class="tb tb-code" style="top:61%; right:1.5%" data-speed="0.16">.kelajak {
+  <span class="f">display</span>: <span class="s">flex</span>;
+  <span class="f">gap</span>: <span class="n">100%</span>;
+  <span class="f">color</span>: <span class="s">#e0504a</span>;
+}</pre>
+
+    <svg class="tb tb-chart" style="top:68%; left:2%" data-speed="0.14" viewBox="0 0 240 140">
+      <text x="0" y="10">mashq_soatlari</text>
+      <path class="grid" d="M0 40H240M0 70H240M0 100H240M0 130H240"/>
+      <path class="area" d="M0 112L40 96L80 100L120 72L160 80L200 50L240 36V140H0Z"/>
+      <path class="line" d="M0 112L40 96L80 100L120 72L160 80L200 50L240 36"/>
+      <circle cx="200" cy="50" r="3"/><circle cx="240" cy="36" r="3"/>
+    </svg>
+
+    <pre class="tb tb-bin" style="top:75%; right:3%" data-speed="0.24">01010011 01000111
+01001011 01001111
+01000100 00100001</pre>
+
+    <pre class="tb tb-code" style="top:82%; left:1.5%" data-speed="0.18"><span class="k">if</span> (orzu === <span class="s">"dasturchi"</span>) {
+  <span class="f">harDoim</span>(<span class="s">"o‘rgan"</span>);
+}<span class="caret">▋</span></pre>
+
+    <svg class="tb tb-circuit tb--flip" style="top:88%; right:-30px" data-speed="0.1" viewBox="0 0 320 220">
+      <path d="M0 40H80L100 60H180L200 40H320M0 90H60L80 110H150M0 140H120L140 120H220L240 140H320M30 220V180L50 160H110M200 220V190L220 170H320"/>
+      <path class="flow" d="M0 40H80L100 60H180L200 40H320M30 220V180L50 160H110"/>
+      <circle cx="150" cy="110" r="4"/><circle cx="110" cy="160" r="4"/><circle cx="180" cy="60" r="3"/><circle cx="220" cy="120" r="3"/>
+    </svg>
+  </div>
+
+  <div class="progress" id="progress"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ===== 1. YUQORI MENYU ===== -->
+  <header class="topbar" id="topbar">
+    <a class="logo" href="#top" aria-label="Bosh sahifa">SG<span>.</span></a>
+    <span class="topbar__line"></span>
+    <nav class="topbar__nav" id="menu" aria-label="Asosiy menyu">
+      <a href="#qiziqishlar">Qiziqishlar</a>
+      <a href="#yol">Yo‘lim</a>
+      <a href="#haqimda">Men haqimda</a>
+      <a href="#terminal">Terminal</a>
+      <a href="#aloqa">Aloqa</a>
+    </nav>
+    <span class="topbar__status"><span class="dot"></span>O‘rganishga tayyor</span>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menyuni ochish">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="asosiy">
+
+    <!-- ===== 2. BOSH QISM ===== -->
+    <section class="hero" id="top">
+      <div class="hero__title" aria-hidden="true">
+        <span style="--i:0">P</span><span style="--i:1">R</span><span style="--i:2">O</span><span style="--i:3">F</span><span style="--i:4">I</span><span style="--i:5">L</span>
+      </div>
+
+      <div class="hero__grid">
+        <!-- Chap ustun -->
+        <div class="hero__left intro" style="--d:.35s">
+          <p class="hero__tags">HTML / CSS / JS</p>
+          <ul class="hero__list">
+            <li>Sahifa tuzilishi</li>
+            <li>Dizayn va ranglar</li>
+            <li>Interaktivlik</li>
+          </ul>
+          <span class="accent-line"></span>
+          <blockquote class="hero__quote">
+            <span class="quote-mark">“</span>
+            Kod yozish — kelajakni o‘z qo‘lim bilan yaratish.
+          </blockquote>
+          <span class="signature">Sunnatjon</span>
+        </div>
+
+        <!-- O'rta ustun: rasm -->
+        <div class="hero__photo intro" style="--d:.15s">
+          <div class="hero__figure" id="hero-figure">
+            <img src="images/profil-hero.jpg" alt="Sunnatjon Gulboyev surati" width="840" height="1302">
+            <svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
+              <defs>
+                <path id="aylana" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/>
+              </defs>
+              <circle class="badge__bg" cx="60" cy="60" r="58"/>
+              <text><textPath href="#aylana" textLength="284" lengthAdjust="spacing">KOD YOZ • O‘RGAN • O‘S • DASTURCHI • </textPath></text>
+              <path class="badge__star" d="M60 44 L63 57 L76 60 L63 63 L60 76 L57 63 L44 60 L57 57 Z"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- O'ng ustun -->
+        <div class="hero__right intro" style="--d:.5s">
+          <h1 class="hero__name">SUNNATJON<br>GULBOYEV</h1>
+          <p class="hero__role"><span id="typing">Bo‘lajak dasturchi</span><span class="cursor">_</span></p>
+          <p class="hero__text">
+            Salom! Men 9-sinf o‘quvchisiman. Dasturlashni o‘rganyapman va kelajakda
+            haqiqiy dasturchi bo‘lishni maqsad qilganman. Bu sayt — shu yo‘ldagi
+            birinchi qadamim.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#aloqa">Bog‘lanish
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#terminal">Terminalni sinash</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <b><span data-count="1700">1700</span>+</b><small>Qator kod</small>
+            </div>
+            <div class="stat">
+              <b data-count="3">3</b><small>Texnologiya</small>
+            </div>
+            <div class="stat">
+              <b data-count="1">1</b><small>Loyiha</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Yugurib turuvchi yozuv lentasi -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>HTML</span><i>✦</i><span class="outline">CSS</span><i>✦</i><span>JavaScript</span><i>✦</i><span class="outline">Fizika</span><i>✦</i><span>Futbol</span><i>✦</i><span class="outline">Musiqa</span><i>✦</i><span>Kelajak dasturchisi</span><i>✦</i>
+        <span>HTML</span><i>✦</i><span class="outline">CSS</span><i>✦</i><span>JavaScript</span><i>✦</i><span class="outline">Fizika</span><i>✦</i><span>Futbol</span><i>✦</i><span class="outline">Musiqa</span><i>✦</i><span>Kelajak dasturchisi</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ===== 3. QIZIQISHLARIM ===== -->
+    <section class="panel interests" id="qiziqishlar">
+      <div class="section-head">
+        <span class="label">(01)</span>
+        <h2 class="section-title">Qiziqishlarim</h2>
+        <p class="section-sub">Meni nimalar ilhomlantiradi — foizlarda.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path d="M14 4l-4 16"/></svg>
+          <span class="bar__num">70%</span>
+          <h3>Dasturlash</h3>
+          <p>Saytlar va dasturlar yaratishni o‘rganyapman.</p>
+          <div class="bar"><span data-value="70"></span></div>
+        </article>
+        <article class="card reveal" style="--d:.08s">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.6"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+          <span class="bar__num">60%</span>
+          <h3>Fizika</h3>
+          <p>Olam qanday ishlashini tushunish menga qiziq.</p>
+          <div class="bar"><span data-value="60"></span></div>
+        </article>
+        <article class="card reveal" style="--d:.16s">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5l4.2 3-1.6 5h-5.2l-1.6-5z"/><path d="M12 7.5V2.5M16.2 10.5l4.6-1.6M14.6 15.5l2.8 4M9.4 15.5l-2.8 4M7.8 10.5L3.2 8.9"/></svg>
+          <span class="bar__num">50%</span>
+          <h3>Futbol</h3>
+          <p>Jamoa bo‘lib o‘ynash va g‘alabaga intilish.</p>
+          <div class="bar"><span data-value="50"></span></div>
+        </article>
+        <article class="card reveal" style="--d:.24s">
+          <svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+          <span class="bar__num">30%</span>
+          <h3>Musiqa tinglash</h3>
+          <p>Kod yozayotganda yaxshi musiqa — eng yaxshi hamroh.</p>
+          <div class="bar"><span data-value="30"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 4. YO'LIM + LOYIHALARIM ===== -->
+    <section class="split" id="yol">
+      <div class="panel roadmap">
+        <div class="section-head">
+          <span class="label">(02)</span>
+          <h2 class="section-title">Dasturchi yo‘lim</h2>
+        </div>
+        <ol class="steps">
+          <li class="step done reveal">
+            <span class="step__num">01</span>
+            <span class="step__icon"><svg viewBox="0 0 24 24"><path d="M5 3h14l-1.5 16L12 21l-5.5-2z"/><path d="M8.5 8h7l-.5 6-3 1-3-1"/></svg></span>
+            <div><h3>HTML</h3><p>Sahifa tuzilishini yaratish.</p></div>
+          </li>
+          <li class="step done reveal">
+            <span class="step__num">02</span>
+            <span class="step__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="8.5" cy="10" r="1.3"/><circle cx="12" cy="7.5" r="1.3"/><circle cx="15.5" cy="10" r="1.3"/><path d="M12 21a2.5 2.5 0 0 1 0-5h2"/></svg></span>
+            <div><h3>CSS</h3><p>Sahifaga dizayn va rang berish.</p></div>
+          </li>
+          <li class="step now reveal">
+            <span class="step__num">03</span>
+            <span class="step__icon"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span>
+            <div><h3>JavaScript <em>hozir</em></h3><p>Sahifani “jonlantirish”ni o‘rganyapman.</p></div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">04</span>
+            <span class="step__icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8"/></svg></span>
+            <div><h3>Loyihalar</h3><p>O‘z g‘oyalarim asosida saytlar qilish.</p></div>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">05</span>
+            <span class="step__icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8z"/></svg></span>
+            <div><h3>Dasturchi</h3><p>Asosiy maqsad — professional bo‘lish!</p></div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="panel projects">
+        <div class="section-head section-head--row">
+          <div>
+            <span class="label">(03)</span>
+            <h2 class="section-title">Loyihalarim</h2>
+          </div>
+          <span class="mono projects__more">// ro‘yxat o‘sib boradi →</span>
+        </div>
+        <div class="project-grid">
+          <article class="project reveal">
+            <a class="project__shot" href="#top" aria-label="Loyiha #001 — shu sayt, yuqoriga qaytish">
+              <img src="images/loyiha-1.jpg" alt="Shaxsiy profil sayti ko‘rinishi" loading="lazy" width="960" height="600">
+              <span class="project__hover">Siz hozir shu saytdasiz 😉</span>
+            </a>
+            <div class="project__meta">
+              <span class="mono project__id">#001</span>
+              <h3>Shaxsiy profil sayti</h3>
+            </div>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          </article>
+          <article class="project project--soon reveal" style="--d:.1s">
+            <div class="project__shot">
+              <pre class="mono"><span class="t-red">while</span> (o‘rganish) {
+  yangiLoyiha();
+}</pre>
+            </div>
+            <div class="project__meta">
+              <span class="mono project__id">#002</span>
+              <h3>Keyingi loyiha</h3>
+            </div>
+            <ul class="tags"><li>Tez orada…</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. MEN HAQIMDA + VOSITALAR ===== -->
+    <section class="split split--about" id="haqimda">
+      <div class="panel about">
+        <div class="section-head">
+          <span class="label">(04)</span>
+          <h2 class="section-title">Men haqimda</h2>
+        </div>
+        <div class="about__body">
+          <div class="about__photo reveal">
+            <img src="images/profil-haqimda.jpg" alt="Sunnatjon Gulboyev" loading="lazy" width="600" height="800">
+          </div>
+          <div class="reveal" style="--d:.1s">
+            <p>Mening ismim Sunnatjon. Jizzax viloyatida yashayman va 9-sinfda o‘qiyman.</p>
+            <p>Dasturlash menga eng ko‘p yoqadigan narsa: bir necha qator kod yozib, butun boshli sahifa yaratish — bu sehrga o‘xshaydi.</p>
+            <ul class="checklist">
+              <li>Yangi narsa o‘rganishni yaxshi ko‘raman</li>
+              <li>Muammoga yechim izlayman</li>
+              <li>Jamoada ishlay olaman</li>
+              <li>Har kuni o‘sishga harakat qilaman</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel tools">
+        <div class="section-head">
+          <span class="label">(05)</span>
+          <h2 class="section-title">Vositalarim</h2>
+        </div>
+        <div class="tool-row">
+          <div class="tool"><span class="tool__box t-vs">VS</span><small>VS Code</small></div>
+          <div class="tool"><span class="tool__box t-html">&lt;/&gt;</span><small>HTML</small></div>
+          <div class="tool"><span class="tool__box t-css">#</span><small>CSS</small></div>
+          <div class="tool"><span class="tool__box t-js">JS</span><small>JavaScript</small></div>
+          <div class="tool"><span class="tool__box t-ai">AI</span><small>Claude</small></div>
+        </div>
+        <blockquote class="code-quote">
+          <span class="quote-mark">“</span>
+          <p>Har bir professional ham bir paytlar yangi boshlovchi bo‘lgan.</p>
+          <cite>— Mening shiorim</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===== 6. INTERAKTIV TERMINAL ===== -->
+    <section class="panel terminal-wrap" id="terminal">
+      <div class="section-head">
+        <span class="label">(06)</span>
+        <h2 class="section-title">Terminal</h2>
+        <p class="section-sub">Dasturchilar kompyuter bilan mana shunday gaplashadi. Buyruq yozib, <b>Enter</b> bosing — masalan <code>yordam</code>.</p>
+      </div>
+      <div class="terminal-col">
+        <div class="terminal">
+          <div class="terminal__bar">
+            <span></span><span></span><span></span>
+            <em>sunnatjon@profil: ~</em>
+          </div>
+          <div class="terminal__body" id="term-body">
+            <div id="term-output" aria-live="polite"></div>
+            <form class="terminal__line" id="term-form">
+              <label for="term-input" class="prompt">sunnatjon@profil:~$</label>
+              <input id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Buyruq kiriting">
+            </form>
+          </div>
+        </div>
+        <div class="term-chips" aria-label="Tezkor buyruqlar">
+          <button type="button" data-cmd="yordam">yordam</button>
+          <button type="button" data-cmd="haqimda">haqimda</button>
+          <button type="button" data-cmd="qiziqishlar">qiziqishlar</button>
+          <button type="button" data-cmd="yol">yol</button>
+          <button type="button" data-cmd="aloqa">aloqa</button>
+          <button type="button" data-cmd="hazil">hazil</button>
+          <button type="button" data-cmd="tozalash">tozalash</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. ALOQA ===== -->
+    <section class="panel contact" id="aloqa">
+      <div class="contact__info">
+        <span class="label">(07)</span>
+        <h2 class="contact__title">Bog‘lanamizmi?</h2>
+        <p class="muted">Savol, taklif yoki shunchaki salom yo‘llamoqchimisiz? Bemalol yozing — albatta javob beraman!</p>
+        <ul class="contact__list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M21.5 3.5L2.5 11l6 2.2L18 6.5l-7.5 8 .2 6 3.3-4 4.5 3.3z"/></svg>
+            <a href="https://t.me/sunnatjon_dev" target="_blank" rel="noopener">@sunnatjon_dev</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <a href="mailto:gulbayevsunnatjon@gmail.com">gulbayevsunnatjon@gmail.com</a>
+            <button class="copy" type="button" data-copy="gulbayevsunnatjon@gmail.com" title="Nusxalash" aria-label="Emailni nusxalash">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            </button>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+            <a href="tel:[telefon olib tashlandi]">[telefon olib tashlandi]</a>
+            <button class="copy" type="button" data-copy="[telefon olib tashlandi]" title="Nusxalash" aria-label="Telefon raqamini nusxalash">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+            </button>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Jizzax, O‘zbekiston</span>
+          </li>
+        </ul>
+        <div class="qr-row">
+          <a class="qr" href="https://t.me/sunnatjon_dev" target="_blank" rel="noopener">
+            <div class="qr__code" data-qr="https://t.me/sunnatjon_dev"></div>
+            <small>Telegram</small>
+          </a>
+          <a class="qr" href="mailto:gulbayevsunnatjon@gmail.com">
+            <div class="qr__code" data-qr="mailto:gulbayevsunnatjon@gmail.com"></div>
+            <small>Gmail</small>
+          </a>
+        </div>
+      </div>
+
+      <!-- Xabar yozish shakli -->
+      <form class="contact__form reveal" id="xabar-form">
+        <h3>Xabar qoldiring</h3>
+        <label>
+          <span>Ismingiz</span>
+          <input name="ism" required maxlength="60" placeholder="Masalan: Ali" autocomplete="name">
+        </label>
+        <label>
+          <span>Xabaringiz</span>
+          <textarea name="xabar" required rows="5" maxlength="1000" placeholder="Salom, Sunnatjon! …"></textarea>
+        </label>
+        <button class="btn btn--primary" type="submit">Gmail orqali yuborish
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="form-note">Tugmani bossangiz, pochta ilovangiz tayyor xabar bilan ochiladi.</p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===== 8. PASTKI QISM ===== -->
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true">SUNNATJON</div>
+    <div class="footer__row">
+      <span>© <span id="yil">2026</span> Sunnatjon Gulboyev</span>
+      <span class="footer__motto">Kod yozaman. O‘rganaman. O‘saman.</span>
+      <span class="mono">&lt;mening_1-loyiham /&gt;</span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Yuqoriga qaytish">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- QR kod kutubxonasi (o'z papkamizda) va bizning skript -->
+  <script src="lib/qrcode.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
