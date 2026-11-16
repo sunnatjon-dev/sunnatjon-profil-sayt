@@ -2,6 +2,8 @@
 
 9-sinf o‘quvchisi va bo‘lajak dasturchining portfoliosi: texnik “infografika” uslubidagi shaxsiy sayt.
 
+**🌐 Jonli sayt: [sunnatjon-dev.github.io/sunnatjon-profil-sayt](https://sunnatjon-dev.github.io/sunnatjon-profil-sayt/)**
+
 ![Saytning ko‘rinishi](images/sayt.jpg)
 
 ## Saytda nimalar bor
