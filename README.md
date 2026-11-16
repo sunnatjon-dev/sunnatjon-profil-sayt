@@ -25,7 +25,10 @@
 | `index.html` | Bosh sahifa |
 | `loyihalar/*.html` | Loyihalar haqida batafsil sahifalar |
 | `style.css` | Dizayn, ranglar, animatsiyalar |
-| `script.js` | Interaktivlik: GitHub ma’lumotlari, laboratoriya, kundalik, terminal |
+| `js/asosiy.js` | Umumiy qismlar: paydo bo‘lish, nusxalash, xabar shakli |
+| `js/github.js` | GitHub’dan haqiqiy raqamlar |
+| `js/lab.js` | Fizika laboratoriyasi |
+| `js/kundalik.js` · `js/terminal.js` | Kundalik va interaktiv terminal |
 
 ## Mualliflik
 

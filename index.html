@@ -141,14 +141,14 @@
         </div>
 
         <form class="lab__controls" id="lab-form">
-          <label class="slider">
-            <span class="slider__top"><span>Burchak, θ</span><output id="out-angle" for="lab-angle">45°</output></span>
-            <input type="range" id="lab-angle" min="10" max="80" step="1" value="45">
-          </label>
-          <label class="slider">
-            <span class="slider__top"><span>Tezlik, v</span><output id="out-speed" for="lab-speed">20 m/s</output></span>
-            <input type="range" id="lab-speed" min="5" max="30" step="1" value="20">
-          </label>
+          <div class="slider">
+            <span class="slider__top"><label for="lab-angle">Burchak, θ</label><output id="out-angle" for="lab-angle">45°</output></span>
+            <input type="range" id="lab-angle" min="10" max="80" step="1" value="45" aria-valuetext="45 gradus">
+          </div>
+          <div class="slider">
+            <span class="slider__top"><label for="lab-speed">Tezlik, v</label><output id="out-speed" for="lab-speed">20 m/s</output></span>
+            <input type="range" id="lab-speed" min="5" max="30" step="1" value="20" aria-valuetext="20 metr sekundiga">
+          </div>
 
           <fieldset class="seg">
             <legend>Qayerda otamiz?</legend>
@@ -351,6 +351,11 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js" defer></script>
+  <!-- Skriptlar mavzular bo'yicha bo'lingan; "defer" — sahifa tayyor bo'lgach, shu tartibda ishga tushadi -->
+  <script src="js/asosiy.js" defer></script>
+  <script src="js/github.js" defer></script>
+  <script src="js/kundalik.js" defer></script>
+  <script src="js/lab.js" defer></script>
+  <script src="js/terminal.js" defer></script>
 </body>
 </html>
