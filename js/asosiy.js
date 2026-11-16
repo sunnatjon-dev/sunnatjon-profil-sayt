@@ -81,7 +81,12 @@ document.querySelectorAll("[data-copy]").forEach((tugma) => {
 });
 
 
-// ----- 5. Xabar yozish shakli → Gmail -----
+// ----- 5. Xabar yozish shakli → Telegram -----
+// Telegram'ning rasmiy havolasi: t.me/<username>?text=... — chat tayyor matn bilan ochiladi,
+// mehmon faqat "Yuborish"ni bosadi. Bot tokeni kerak emas, shuning uchun xavfsiz.
+// (Hujjat: https://core.telegram.org/api/links)
+const TELEGRAM = "sunnatjon_dev";
+
 document.getElementById("xabar-form").addEventListener("submit", (e) => {
   e.preventDefault();                 // sahifa yangilanib ketmasin
   const forma = e.target;
@@ -89,10 +94,9 @@ document.getElementById("xabar-form").addEventListener("submit", (e) => {
   const matn = forma.xabar.value.trim();
   if (!ism || !matn) { xabar("✍️ Iltimos, ism va xabarni yozing"); return; }
 
-  const mavzu = encodeURIComponent("Saytdan xabar — " + ism);
-  const tana = encodeURIComponent(matn + "\n\n— " + ism);
-  window.location.href = `mailto:gulbayevsunnatjon@gmail.com?subject=${mavzu}&body=${tana}`;
-  xabar("📬 Pochta ilovasi ochilmoqda…");
+  const tayyorXabar = `Salom! Men ${ism}. Saytingizdan yozyapman:\n\n${matn}`;
+  window.open(`https://t.me/${TELEGRAM}?text=${encodeURIComponent(tayyorXabar)}`, "_blank", "noopener");
+  xabar("✈️ Telegram ochilmoqda…");
   forma.reset();
 });
 

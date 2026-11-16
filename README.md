@@ -15,7 +15,7 @@
 - **Dasturchi yo‘li** va **Ko‘nikmalar** — foizsiz, halol darajalar: tanishman / o‘rganyapman / rejada
 - **O‘rganish kundaligi** — nimani qachon o‘rganganim
 - **Interaktiv terminal** — `yordam`, `loyihalar`, `kundalik`, `hazil` kabi buyruqlar
-- **Aloqa** — Telegram, Gmail, GitHub va xabar yozish shakli
+- **Aloqa** — Telegram, Gmail, GitHub va Telegram’ga tayyor xabar yuboradigan shakl
 - Telefon, planshet va kompyuterga moslashgan; klaviatura bilan boshqariladi; animatsiyalarni o‘chirgan foydalanuvchilar uchun harakatsiz rejim
 
 ## Fayllar
