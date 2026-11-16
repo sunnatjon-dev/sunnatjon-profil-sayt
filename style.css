@@ -19,6 +19,24 @@
   font-display: optional;   /* kech kelsa — sahifa siljimasligi uchun zaxira shriftda qoladi */
 }
 
+/* Zaxira shriftlar Archivo o'lchamlariga moslangan (ascent 88%, descent 21% — brauzerda o'lchangan).
+   Archivo yuklanguncha matn aynan shu joyda turadi, keyin almashganda sahifa "sakramaydi". */
+@font-face {
+  font-family: "Archivo Fallback Display";
+  src: local("Arial Black");
+  ascent-override: 88%;
+  descent-override: 21%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Archivo Fallback";
+  src: local("Segoe UI"), local("Roboto"), local("Arial");
+  size-adjust: 108%;          /* Archivo bir oz kengroq — qatorlar bir xil bo'linsin */
+  ascent-override: 81.5%;     /* 88% / 1.08 */
+  descent-override: 19.4%;    /* 21% / 1.08 */
+  line-gap-override: 0%;
+}
+
 
 /* =========================================================
    1. RANGLAR VA ASOSIY SOZLAMALAR
