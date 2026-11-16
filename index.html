@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sunnatjon Gulboyev — bo‘lajak dasturchi</title>
   <meta name="description" content="Sunnatjon Gulboyev — 9-sinf o‘quvchisi va bo‘lajak dasturchi. Fizika va kodni birlashtirib, brauzerda ishlaydigan interaktiv loyihalar yarataman.">
-  <meta name="theme-color" content="#e1e1de">
+  <meta name="theme-color" content="#e1e1de" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
 
   <!-- Telegram/Instagramda havola yuborilganda chiqadigan ko'rinish -->
   <meta property="og:type" content="website">
@@ -172,9 +174,10 @@
       </div>
     </section>
 
-    <!-- 004 — Dasturchi yo'li -->
-    <section class="panel c-7 w-r" id="yol" aria-labelledby="h-yol">
-      <header class="panel__head"><span class="idx">004</span><h2 id="h-yol">Dasturchi yo‘li</h2><span class="code">03 / 05</span></header>
+    <!-- 004 — Yo'l va ko'nikmalar (foizsiz: faqat halol darajalar) -->
+    <section class="panel c-12" id="yol" aria-labelledby="h-yol">
+      <header class="panel__head"><span class="idx">004</span><h2 id="h-yol">Yo‘l va ko‘nikmalar</h2><span class="code">Bosqich 03 / 05</span></header>
+
       <ol class="route">
         <li class="done"><small>01</small><span class="node" aria-hidden="true"></span><b>HTML</b><em>Tuzilish</em></li>
         <li class="done"><small>02</small><span class="node" aria-hidden="true"></span><b>CSS</b><em>Dizayn</em></li>
@@ -182,16 +185,7 @@
         <li><small>04</small><span class="node" aria-hidden="true"></span><b>Loyihalar</b><em>Keyingi</em></li>
         <li><small>05</small><span class="node" aria-hidden="true"></span><b>Dasturchi</b><em>Maqsad</em></li>
       </ol>
-      <p class="small route__note"><b>Hozir:</b> JavaScript — sahifani “jonlantirish”ni o‘rganyapman. Keyingi qadam — o‘z g‘oyalarim asosida loyihalar qilish.</p>
-      <div class="progress">
-        <p class="label label--row"><span>Bosqichlar</span><span>2 / 5 tugallandi</span></p>
-        <div class="progress__bar" aria-hidden="true"><i></i><i></i></div>
-      </div>
-    </section>
 
-    <!-- 005 — Ko'nikmalar (foizsiz: faqat halol darajalar) -->
-    <section class="panel c-5" id="konikmalar" aria-labelledby="h-skills">
-      <header class="panel__head"><span class="idx">005</span><h2 id="h-skills">Ko‘nikmalar</h2><span class="code">3 daraja</span></header>
       <div class="skills">
         <div class="skills__group">
           <h3><i class="k" aria-hidden="true"></i>Tanishman</h3>
@@ -216,17 +210,23 @@
           </ul>
         </div>
       </div>
-      <p class="label skills__tools">Vositalar: VS Code · Git · GitHub · Claude</p>
+
+      <div class="yol__foot">
+        <div class="progress">
+          <p class="label label--row"><span>Bosqichlar</span><span>2 / 5 tugallandi</span></p>
+          <div class="progress__bar" aria-hidden="true"><i></i><i></i></div>
+        </div>
+        <p class="label">Vositalar: VS Code · Git · GitHub · Claude</p>
+      </div>
     </section>
 
-    <!-- 006 — O'rganish kundaligi -->
-    <section class="panel c-12" id="kundalik" aria-labelledby="h-log">
-      <header class="panel__head"><span class="idx">006</span><h2 id="h-log">O‘rganish kundaligi</h2><span class="code" id="log-count">Yozuvlar</span></header>
+    <!-- 005 — O'rganish kundaligi -->
+    <section class="panel c-7 w-r" id="kundalik" aria-labelledby="h-log">
+      <header class="panel__head"><span class="idx">005</span><h2 id="h-log">O‘rganish kundaligi</h2><span class="code" id="log-count">Yozuvlar</span></header>
 
-      <div class="diary">
-        <div class="diary__intro">
-          <p class="figure display" id="log-total">04</p>
-          <p class="label">Yozuv</p>
+      <div class="diary__intro">
+        <p class="figure display" id="log-total">04</p>
+        <div>
           <p class="small">Har safar yangi narsa o‘rganganimda shu yerga qisqacha yozib boraman — eng yangisi tepada.</p>
           <p class="label legend diary__legend">
             <span><i class="t-html"></i>HTML</span>
@@ -235,42 +235,42 @@
             <span><i class="t-git"></i>Git</span>
           </p>
         </div>
-
-        <!--
-          YANGI YOZUV QO'SHISH: pastdagi <li> ... </li> blokidan birini nusxalab,
-          ro'yxatning ENG TEPASIGA qo'ying va sana, teg, sarlavha, matnni o'zgartiring.
-          Teglar: t-html, t-css, t-js, t-git
-        -->
-        <ol class="log" id="log">
-          <li class="log__item">
-            <time class="mono" datetime="2026-11-16">16.11.2026</time>
-            <span class="log__tag t-css">CSS</span>
-            <div><h3>Saytga yangi uslub</h3><p>Saytimni texnik “infografika” uslubiga o‘tkazdim. Sahifani 12 ta ustunli to‘r (grid) yordamida qurish mumkinligini bildim.</p></div>
-          </li>
-          <li class="log__item">
-            <time class="mono" datetime="2026-11-15">15.11.2026</time>
-            <span class="log__tag t-css">CSS</span>
-            <div><h3>Ranglar va o‘zgaruvchilar</h3><p>Sayt ranglarini o‘zgartirdim. CSS o‘zgaruvchisini bir joyda almashtirsam, butun sayt rangi o‘zgarishini ko‘rdim.</p></div>
-          </li>
-          <li class="log__item">
-            <time class="mono" datetime="2026-11-13">13.11.2026</time>
-            <span class="log__tag t-git">Git</span>
-            <div><h3>Birinchi commit</h3><p>Loyihamni GitHub’ga yukladim. Git kodning har bir versiyasini saqlab borishini bildim.</p></div>
-          </li>
-          <li class="log__item">
-            <time class="mono" datetime="2026-11-13">13.11.2026</time>
-            <span class="log__tag t-html">HTML</span>
-            <div><h3>Birinchi saytim</h3><p>Hayotimdagi birinchi saytni yaratdim. HTML — sahifaning skeleti, CSS — kiyimi, JavaScript — miyasi ekan.</p></div>
-          </li>
-        </ol>
       </div>
+
+      <!--
+        YANGI YOZUV QO'SHISH: pastdagi <li> ... </li> blokidan birini nusxalab,
+        ro'yxatning ENG TEPASIGA qo'ying va sana, teg, sarlavha, matnni o'zgartiring.
+        Teglar: t-html, t-css, t-js, t-git
+      -->
+      <ol class="log" id="log">
+        <li class="log__item">
+          <time class="mono" datetime="2026-11-16">16.11.2026</time>
+          <span class="log__tag t-css">CSS</span>
+          <div><h3>Saytga yangi uslub</h3><p>Saytimni texnik “infografika” uslubiga o‘tkazdim. Sahifani 12 ta ustunli to‘r (grid) yordamida qurish mumkinligini bildim.</p></div>
+        </li>
+        <li class="log__item">
+          <time class="mono" datetime="2026-11-15">15.11.2026</time>
+          <span class="log__tag t-css">CSS</span>
+          <div><h3>Ranglar va o‘zgaruvchilar</h3><p>Sayt ranglarini o‘zgartirdim. CSS o‘zgaruvchisini bir joyda almashtirsam, butun sayt rangi o‘zgarishini ko‘rdim.</p></div>
+        </li>
+        <li class="log__item">
+          <time class="mono" datetime="2026-11-13">13.11.2026</time>
+          <span class="log__tag t-git">Git</span>
+          <div><h3>Birinchi commit</h3><p>Loyihamni GitHub’ga yukladim. Git kodning har bir versiyasini saqlab borishini bildim.</p></div>
+        </li>
+        <li class="log__item">
+          <time class="mono" datetime="2026-11-13">13.11.2026</time>
+          <span class="log__tag t-html">HTML</span>
+          <div><h3>Birinchi saytim</h3><p>Hayotimdagi birinchi saytni yaratdim. HTML — sahifaning skeleti, CSS — kiyimi, JavaScript — miyasi ekan.</p></div>
+        </li>
+      </ol>
 
       <button class="more" id="log-more" type="button" hidden aria-expanded="false" aria-controls="log">Hammasini ko‘rsatish</button>
     </section>
 
-    <!-- 007 — Terminal -->
-    <section class="panel c-7 w-r" id="terminal" aria-labelledby="h-term">
-      <header class="panel__head"><span class="idx">007</span><h2 id="h-term">Terminal</h2><span class="code">Bash</span></header>
+    <!-- 006 — Terminal -->
+    <section class="panel c-5" id="terminal" aria-labelledby="h-term">
+      <header class="panel__head"><span class="idx">006</span><h2 id="h-term">Terminal</h2><span class="code">Bash</span></header>
       <p class="small">Dasturchilar kompyuter bilan shunday gaplashadi. Buyruq yozib, Enter bosing — masalan <code>yordam</code>.</p>
       <div class="terminal" id="term-body">
         <div id="term-output" aria-live="polite"></div>
@@ -289,44 +289,51 @@
       </div>
     </section>
 
-    <!-- 008 — Aloqa -->
-    <section class="panel c-5" id="aloqa" aria-labelledby="h-aloqa">
-      <header class="panel__head"><span class="idx">008</span><h2 id="h-aloqa">Aloqa</h2><span class="code">Telegram afzal</span></header>
-      <ul class="contacts">
-        <li>
-          <small>Telegram</small>
-          <a href="https://t.me/sunnatjon_dev" target="_blank" rel="noopener">@sunnatjon_dev</a>
-          <button class="copy" type="button" data-copy="@sunnatjon_dev" aria-label="Telegram manzilini nusxalash">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12"/><path d="M5 15V3h12"/></svg>
-          </button>
-        </li>
-        <li>
-          <small>Gmail</small>
-          <a href="mailto:gulbayevsunnatjon@gmail.com">gulbayevsunnatjon@gmail.com</a>
-          <button class="copy" type="button" data-copy="gulbayevsunnatjon@gmail.com" aria-label="Emailni nusxalash">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12"/><path d="M5 15V3h12"/></svg>
-          </button>
-        </li>
-        <li>
-          <small>GitHub</small>
-          <a href="https://github.com/sunnatjon-dev" target="_blank" rel="noopener">github.com/sunnatjon-dev</a>
-        </li>
-      </ul>
+    <!-- 007 — Aloqa -->
+    <section class="panel c-12" id="aloqa" aria-labelledby="h-aloqa">
+      <header class="panel__head"><span class="idx">007</span><h2 id="h-aloqa">Aloqa</h2><span class="code">Telegram afzal</span></header>
+      <div class="aloqa">
+        <ul class="contacts">
+          <li>
+            <small>Telegram</small>
+            <a href="https://t.me/sunnatjon_dev" target="_blank" rel="noopener">@sunnatjon_dev</a>
+            <button class="copy" type="button" data-copy="@sunnatjon_dev" aria-label="Telegram manzilini nusxalash">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12"/><path d="M5 15V3h12"/></svg>
+            </button>
+          </li>
+          <li>
+            <small>Gmail</small>
+            <a href="mailto:gulbayevsunnatjon@gmail.com">gulbayevsunnatjon@gmail.com</a>
+            <button class="copy" type="button" data-copy="gulbayevsunnatjon@gmail.com" aria-label="Emailni nusxalash">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12"/><path d="M5 15V3h12"/></svg>
+            </button>
+          </li>
+          <li>
+            <small>GitHub</small>
+            <a href="https://github.com/sunnatjon-dev" target="_blank" rel="noopener">github.com/sunnatjon-dev</a>
+          </li>
+        </ul>
 
-      <form class="form" id="xabar-form">
-        <p class="label">Yoki shu yerdan yozing</p>
-        <label class="field">
-          <span>Ismingiz</span>
-          <input name="ism" required maxlength="60" placeholder="Masalan: Ali" autocomplete="name">
-        </label>
-        <label class="field">
-          <span>Xabaringiz</span>
-          <textarea name="xabar" required rows="3" maxlength="1000" placeholder="Salom, Sunnatjon! …"></textarea>
-        </label>
-        <button class="btn" type="submit">Gmail orqali yuborish
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-      </form>
+        <form class="form" id="xabar-form">
+          <p class="label">Yoki shu yerdan yozing</p>
+          <div class="form__row">
+            <label class="field">
+              <span>Ismingiz</span>
+              <input name="ism" required maxlength="60" placeholder="Masalan: Ali" autocomplete="name">
+            </label>
+            <label class="field">
+              <span>Xabaringiz</span>
+              <textarea name="xabar" required rows="3" maxlength="1000" placeholder="Salom, Sunnatjon! …"></textarea>
+            </label>
+          </div>
+          <div class="form__foot">
+            <p class="small">Tugma pochta ilovangizni tayyor xabar bilan ochadi.</p>
+            <button class="btn" type="submit">Gmail orqali yuborish
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
 
   </main>

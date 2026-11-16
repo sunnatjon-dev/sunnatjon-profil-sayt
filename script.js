@@ -152,10 +152,16 @@ const natijaEl = {
 
 // CSS'dagi ranglarni olamiz — shunda rang faqat bitta joyda (style.css) turadi
 const css = (nom) => getComputedStyle(document.documentElement).getPropertyValue(nom).trim();
-const ranglar = {
-  ink: css("--ink"), muted: css("--muted"), rule: css("--rule"),
-  grey: css("--grey"), cyan: css("--cyan"), orange: css("--orange"), field: css("--field"),
-};
+const ranglar = {};
+function ranglarniOl() {
+  ["ink", "muted", "rule", "grey", "cyan", "field"].forEach((nom) => (ranglar[nom] = css("--" + nom)));
+}
+ranglarniOl();
+// Qorong'i/yorug' rejim almashsa — grafik ranglarini yangilab, qayta chizamiz
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+  ranglarniOl();
+  chiz();
+});
 
 const lab = {
   g: sayyoralar.yer,
@@ -241,7 +247,7 @@ function chiz() {
   if (!olcham.w) return;
   const m = masshtab();
   ctx.clearRect(0, 0, olcham.w, olcham.h);
-  ctx.font = "10px 'JetBrains Mono', monospace";
+  ctx.font = "11px 'JetBrains Mono', monospace";
   ctx.lineWidth = 1;
   ctx.setLineDash([]);
 
@@ -264,8 +270,8 @@ function chiz() {
     ctx.fillText(y, CHET.chap - 8, py);
   }
 
-  // 2) Yer sathi — to'q sariq chiziq
-  ctx.strokeStyle = ranglar.orange;
+  // 2) Yer sathi — qalin qora chiziq
+  ctx.strokeStyle = ranglar.ink;
   ctx.lineWidth = 2;
   chiziq(CHET.chap, m.y(0) + 1, olcham.w - CHET.ong, m.y(0) + 1);
 
