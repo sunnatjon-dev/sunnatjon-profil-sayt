@@ -50,8 +50,8 @@
   --fs-base: 16px;   /* asosiy matn */
   --fs-lg: 18px;     /* kichik sarlavhalar */
 
-  --font-display: "Archivo", "Arial Black", sans-serif;   /* katta sarlavhalar */
-  --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;   /* oddiy matn */
+  --font-display: "Archivo", "Archivo Fallback Display", "Arial Black", sans-serif;   /* katta sarlavhalar */
+  --font-body: "Archivo", "Archivo Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;   /* oddiy matn */
   --font-mono: "JetBrains Mono", Consolas, monospace;
 
   --gap: 28px;
