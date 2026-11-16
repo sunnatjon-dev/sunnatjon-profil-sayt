@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sunnatjon-dev.github.io/sunnatjon-profil-sayt/sitemap.xml

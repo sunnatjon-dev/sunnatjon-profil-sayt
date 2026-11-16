@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fizika laboratoriyasi — Sunnatjon Gulboyev</title>
+  <meta name="description" content="To‘p otish tajribasi: burchak, tezlik va sayyorani tanlab, to‘pni nishonga tushiradigan interaktiv fizika simulyatsiyasi. JavaScript va Canvas.">
+  <meta name="theme-color" content="#e1e1de">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="uz_UZ">
+  <meta property="og:title" content="Fizika laboratoriyasi — Sunnatjon Gulboyev">
+  <meta property="og:description" content="Interaktiv to‘p otish tajribasi: JavaScript, Canvas va maktab fizikasi.">
+  <meta property="og:url" content="https://sunnatjon-dev.github.io/sunnatjon-profil-sayt/loyihalar/fizika-laboratoriyasi.html">
+  <meta property="og:image" content="https://sunnatjon-dev.github.io/sunnatjon-profil-sayt/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://sunnatjon-dev.github.io/sunnatjon-profil-sayt/loyihalar/fizika-laboratoriyasi.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preload" href="../fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <a class="skip" href="#asosiy">Asosiy qismga o‘tish</a>
+
+  <header class="mast">
+    <div class="mast__bar">
+      <a class="back mono" href="../index.html#loyihalar">← Barcha loyihalar</a>
+      <span class="mono">Loyiha #002</span>
+    </div>
+
+    <h1 class="mast__title case__title display">Fizika<br>laboratoriyasi</h1>
+
+    <div class="hero">
+      <p class="hero__lead">Burchak, tezlik va sayyorani tanlab, to‘pni <em>nishonga</em> tushiradigan interaktiv tajriba.</p>
+      <div class="hero__side">
+        <dl class="case__meta">
+          <div><dt>Yil</dt><dd>2026</dd></div>
+          <div><dt>Turi</dt><dd>Simulyatsiya</dd></div>
+          <div><dt>Texnologiyalar</dt><dd>JavaScript, Canvas</dd></div>
+          <div><dt>Holat</dt><dd>Tayyor</dd></div>
+        </dl>
+        <div class="hero__cta">
+          <a class="btn" href="../index.html#lab">Sinab ko‘rish
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="https://github.com/sunnatjon-dev/sunnatjon-profil-sayt/blob/main/script.js" target="_blank" rel="noopener">Kodni ko‘rish ↗</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="sheet case" id="asosiy">
+
+    <figure class="panel c-12 case__shot">
+      <img src="../images/lab.jpg" alt="Fizika laboratoriyasi: grafikda to‘pning uchish yo‘li, o‘ng tomonda burchak, tezlik va sayyora tanlash tugmalari" width="1145" height="533">
+      <figcaption class="small">60° burchak va 22 m/s tezlikda otilgan to‘p: 42.7 m uchdi, eng baland nuqtasi 18.5 m.</figcaption>
+    </figure>
+
+    <section class="panel c-8" aria-labelledby="s1">
+      <header class="panel__head"><span class="idx">01</span><h2 id="s1">Maqsad</h2></header>
+      <p class="prose">Maktabda o‘tgan fizika formulalarini “jonli” ko‘rmoqchi edim: burchak yoki tezlikni o‘zgartirsangiz, to‘p qanday uchishi darhol ko‘rinsin. Bu loyihada ikkita qiziqishimni — fizika va dasturlashni — birlashtirdim.</p>
+      <p class="prose">Shunchaki chiroyli animatsiya emas: har bir raqam haqiqiy formula bilan hisoblanadi, shuning uchun natijani daftarda tekshirib ko‘rish mumkin.</p>
+    </section>
+
+    <aside class="panel c-4" aria-labelledby="s-links">
+      <header class="panel__head"><span class="idx">→</span><h2 id="s-links">Havolalar</h2></header>
+      <ul class="aside-list">
+        <li><a href="../index.html#lab">Sinab ko‘rish</a><small>Bosh sahifadagi jonli demo</small></li>
+        <li><a href="https://github.com/sunnatjon-dev/sunnatjon-profil-sayt/blob/main/script.js" target="_blank" rel="noopener">Manba kodi ↗</a><small><code>script.js</code>, 5-bo‘lim · ≈330 qator</small></li>
+      </ul>
+    </aside>
+
+    <section class="panel c-8" aria-labelledby="s2">
+      <header class="panel__head"><span class="idx">02</span><h2 id="s2">Qanday ishlaydi</h2></header>
+      <p class="prose">Havo qarshiligini hisobga olmaymiz. Unda to‘pning harakati uchta formula bilan to‘liq tavsiflanadi:</p>
+      <pre class="formula">Masofa     R = v² · sin 2θ / g
+Balandlik  H = (v · sin θ)² / 2g
+Vaqt       T = 2 · v · sin θ / g</pre>
+      <ol class="steps">
+        <li><b>Hisoblash.</b> Surgichlardan burchak (θ) va tezlik (v) olinadi, sayyoradan esa g. Funksiya R, H va T ni qaytaradi.</li>
+        <li><b>Har bir kadr.</b> Animatsiya davomida to‘pning o‘rni x(t) = v·cosθ·t va y(t) = v·sinθ·t − g·t²/2 bo‘yicha topiladi.</li>
+        <li><b>Metrdan pikselga.</b> Ikkala o‘qda bir xil masshtab ishlatiladi, shuning uchun traektoriya shakli buzilmaydi.</li>
+        <li><b>Chizish.</b> Canvas’da to‘r, yer sathi, nishon, oldingi otishlar izi va to‘pning o‘zi chiziladi.</li>
+      </ol>
+    </section>
+
+    <section class="panel c-8" aria-labelledby="s3">
+      <header class="panel__head"><span class="idx">03</span><h2 id="s3">Qiyinchiliklar va yechimlar</h2></header>
+      <h3>Oyda to‘p 37 soniya uchadi</h3>
+      <p class="prose">Oyda tortishish Yerdagidan 6 marta kuchsiz, shuning uchun haqiqiy vaqtda kutish zerikarli bo‘lardi. Har bir sayyora uchun animatsiya tezlashtiriladi: istalgan otish 2–3 soniyada ko‘rinadi, lekin otishlar orasidagi nisbat to‘g‘riligicha qoladi.</p>
+      <h3>Grafik har xil sayyoraga sig‘ishi kerak</h3>
+      <p class="prose">Maydon kengligi eng uzoq otishdan (v²/g) hisoblanadi, to‘r qadami esa 1–2–5–10 kabi “chiroyli” sonlardan tanlanadi. Shuning uchun Yerda 100 m, Oyda 600 m maydon ko‘rinadi.</p>
+      <h3>Telefonda xira chiziqlar</h3>
+      <p class="prose">Zamonaviy ekranlarda bitta CSS pikselda bir nechta haqiqiy piksel bor. Canvas o‘lchami ekran zichligiga (<code>devicePixelRatio</code>) ko‘paytiriladi, shunda chiziqlar tiniq chiqadi.</p>
+      <h3>Hamma uchun qulay</h3>
+      <p class="prose">Boshqaruv brauzerning o‘z elementlaridan (surgich, radio tugmalar) yasalgan, shuning uchun klaviatura bilan ham ishlaydi. Natija ekran o‘quvchi dasturlarga ovoz bilan aytiladi. Animatsiyani o‘chirib qo‘ygan foydalanuvchilar esa natijani darhol ko‘radi.</p>
+    </section>
+
+    <section class="panel c-8" aria-labelledby="s4">
+      <header class="panel__head"><span class="idx">04</span><h2 id="s4">Nimani o‘rgandim</h2></header>
+      <!-- Bu bo'limni o'z so'zlaringiz bilan qayta yozing — bu sizning tajribangiz! -->
+      <ul class="steps">
+        <li>JavaScript’da <code>Math.sin</code> gradus emas, <b>radian</b> bilan ishlaydi — avval gradusni radianga o‘tkazish kerak.</li>
+        <li>Fizika formulasi kodda bitta qator bo‘lishi mumkin — matematika va dasturlash juda yaqin ekan.</li>
+        <li><code>requestAnimationFrame</code> yordamida silliq animatsiya qilinadi.</li>
+      </ul>
+    </section>
+
+    <aside class="panel c-4" aria-labelledby="s-author">
+      <header class="panel__head"><span class="idx">i</span><h2 id="s-author">Mualliflik</h2></header>
+      <p class="small">G‘oya va tanlovlar — meniki. Kodni <b>Claude</b> (sun’iy intellekt) bilan birga yozdim va uni bo‘lim-bo‘lim o‘qib, o‘rganyapman.</p>
+    </aside>
+
+  </main>
+
+  <footer class="foot">
+    <a class="next" href="profil-sayti.html">
+      <span class="mono small">Keyingi loyiha</span>
+      <b class="display">Shaxsiy profil sayti →</b>
+    </a>
+    <div class="foot__side">
+      <p class="mono">© 2026 Sunnatjon Gulboyev</p>
+    </div>
+  </footer>
+
+</body>
+</html>
