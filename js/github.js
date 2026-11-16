@@ -11,6 +11,12 @@ const BIR_SOAT = 60 * 60 * 1000;
 
 async function githubdanOl() {
   const api = "https://api.github.com";
+
+  // Avval limitni tekshiramiz — bu so'rov limitni sarflamaydi. Bir IP'dan ko'p odam kirsa
+  // (maktab, mobil operator) limit tugashi mumkin; unda so'rov yubormaymiz va xato chiqmaydi.
+  const limit = await fetch(`${api}/rate_limit`).then((javob) => javob.json());
+  if (limit.resources.core.remaining < 2) throw new Error("GitHub limiti tugagan");
+
   const [profil, commitlar] = await Promise.all([
     fetch(`${api}/users/${GITHUB.foydalanuvchi}`),
     fetch(`${api}/repos/${GITHUB.foydalanuvchi}/${GITHUB.repo}/commits?per_page=1`),
