@@ -104,7 +104,7 @@
           <span class="proj__n mono">#002</span>
           <div class="proj__body">
             <h3><a href="loyihalar/fizika-laboratoriyasi.html">Fizika laboratoriyasi</a></h3>
-            <p>To‘p otish tajribasi: burchak, tezlik va sayyorani tanlab, to‘pni nishonga tushirasiz. Hammasi haqiqiy fizika formulalari asosida hisoblanadi.</p>
+            <p>Uchta interaktiv tajriba: to‘p otish, mayatnik va yorug‘lik sinishi. Har birida vazifa bor, hamma narsa haqiqiy fizika formulalari bilan hisoblanadi.</p>
             <ul class="tags" aria-label="Texnologiyalar"><li>JavaScript</li><li>Canvas</li><li>Fizika</li></ul>
           </div>
           <div class="proj__links">
@@ -128,11 +128,18 @@
       <p class="small projects__next">Keyingi loyiha ustida ishlayapman — jarayonni <a href="#kundalik">Kundalikda</a> kuzatib boring.</p>
     </section>
 
-    <!-- 003 — Fizika laboratoriyasi (jonli demo) -->
+    <!-- 003 — Fizika laboratoriyasi (jonli demo): 3 ta tajriba, tablar bilan almashtiriladi -->
     <section class="panel c-12" id="lab" aria-labelledby="h-lab">
-      <header class="panel__head"><span class="idx">003</span><h2 id="h-lab">Fizika laboratoriyasi</h2><span class="code" id="lab-hits">Nishon: 0</span></header>
+      <header class="panel__head"><span class="idx">003</span><h2 id="h-lab">Fizika laboratoriyasi</h2><span class="code">3 tajriba</span></header>
 
-      <div class="lab">
+      <div class="lab__tabs" role="tablist" aria-label="Tajribalar">
+        <button type="button" role="tab" id="tab-otish" aria-controls="exp-otish" aria-selected="true"><small>01</small>To‘p otish</button>
+        <button type="button" role="tab" id="tab-mayatnik" aria-controls="exp-mayatnik" aria-selected="false" tabindex="-1"><small>02</small>Mayatnik</button>
+        <button type="button" role="tab" id="tab-nur" aria-controls="exp-nur" aria-selected="false" tabindex="-1"><small>03</small>Yorug‘lik sinishi</button>
+      </div>
+
+      <!-- ===== 01. TO'P OTISH ===== -->
+      <div class="lab" id="exp-otish" role="tabpanel" aria-labelledby="tab-otish">
         <div class="lab__stage">
           <p class="label label--row"><span>Tajriba: to‘p otish</span><span>R = v² · sin 2θ / g</span></p>
           <div class="lab__canvas">
@@ -164,6 +171,7 @@
             <div><b class="display" id="r-time">—</b><small>Vaqt, s</small></div>
           </div>
 
+          <p class="label lab__score" id="lab-hits">Nishon: 0</p>
           <div class="lab__actions">
             <button class="btn" type="submit">Otish
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -172,6 +180,94 @@
           </div>
           <p class="lab__msg" id="lab-msg" role="status"></p>
         </form>
+      </div>
+
+      <!-- ===== 02. MAYATNIK ===== -->
+      <div class="lab" id="exp-mayatnik" role="tabpanel" aria-labelledby="tab-mayatnik" hidden>
+        <div class="lab__stage">
+          <p class="label label--row"><span>Tajriba: mayatnik</span><span>T = 2π · √(L / g)</span></p>
+          <div class="lab__canvas">
+            <canvas id="m-canvas" role="img" aria-label="Tebranayotgan mayatnik"></canvas>
+          </div>
+          <p class="small" id="m-izoh">Ip uzunligi va og‘ish burchagini tanlab, <b>Qo‘yib yuborish</b>ni bosing. Sayt bir to‘liq tebranish vaqtini — davrni — o‘zi o‘lchaydi.</p>
+        </div>
+
+        <form class="lab__controls" id="m-form">
+          <p class="lab__task"><span class="label">Vazifa</span><b id="m-vazifa">Davrni 2.0 s qiling</b></p>
+          <div class="slider">
+            <span class="slider__top"><label for="m-uzunlik">Ip uzunligi, L</label><output id="m-out-uzunlik" for="m-uzunlik">1.00 m</output></span>
+            <input type="range" id="m-uzunlik" min="0.25" max="2.5" step="0.05" value="1" aria-valuetext="1 metr">
+          </div>
+          <div class="slider">
+            <span class="slider__top"><label for="m-burchak">Og‘ish burchagi, θ₀</label><output id="m-out-burchak" for="m-burchak">20°</output></span>
+            <input type="range" id="m-burchak" min="5" max="70" step="1" value="20" aria-valuetext="20 gradus">
+          </div>
+
+          <fieldset class="seg">
+            <legend>Qayerda tebranadi?</legend>
+            <label><input type="radio" name="m-sayyora" value="yer" checked><span>Yer</span></label>
+            <label><input type="radio" name="m-sayyora" value="mars"><span>Mars</span></label>
+            <label><input type="radio" name="m-sayyora" value="oy"><span>Oy</span></label>
+          </fieldset>
+
+          <div class="facts readout">
+            <div><b class="display" id="m-formula">—</b><small>Formula, s</small></div>
+            <div><b class="display" id="m-olchangan">—</b><small>O‘lchangan, s</small></div>
+            <div><b class="display" id="m-tezlik">—</b><small>Maks. tezlik, m/s</small></div>
+          </div>
+
+          <p class="label lab__score" id="m-ball">Bajarildi: 0</p>
+          <div class="lab__actions">
+            <button class="btn" type="submit" id="m-start">Qo‘yib yuborish
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <button class="btn btn--ghost" type="button" id="m-qayta">Qayta</button>
+          </div>
+          <p class="lab__msg" id="m-msg" role="status"></p>
+        </form>
+      </div>
+
+      <!-- ===== 03. YORUG'LIK SINISHI ===== -->
+      <div class="lab" id="exp-nur" role="tabpanel" aria-labelledby="tab-nur" hidden>
+        <div class="lab__stage">
+          <p class="label label--row"><span>Tajriba: yorug‘lik sinishi</span><span>n₁ · sin θ₁ = n₂ · sin θ₂</span></p>
+          <div class="lab__canvas lab__canvas--drag">
+            <canvas id="n-canvas" role="img" aria-label="Ikki muhit chegarasida sinayotgan yorug‘lik nuri"></canvas>
+          </div>
+          <p class="small">Nur manbaini <b>sichqoncha yoki barmoq bilan sudrang</b> yoki surgichdan foydalaning. Muhitlarni almashtirib, nur qanday sinishini kuzating.</p>
+        </div>
+
+        <div class="lab__controls" id="n-form">
+          <p class="lab__task"><span class="label">Vazifa</span><b id="n-vazifa">—</b></p>
+          <div class="slider">
+            <span class="slider__top"><label for="n-burchak">Tushish burchagi, θ₁</label><output id="n-out-burchak" for="n-burchak">40°</output></span>
+            <input type="range" id="n-burchak" min="0" max="89" step="1" value="40" aria-valuetext="40 gradus">
+          </div>
+
+          <fieldset class="seg seg--4">
+            <legend>Nur qayerdan keladi (yuqori muhit)</legend>
+            <label><input type="radio" name="n-muhit1" value="havo" checked><span>Havo</span></label>
+            <label><input type="radio" name="n-muhit1" value="suv"><span>Suv</span></label>
+            <label><input type="radio" name="n-muhit1" value="shisha"><span>Shisha</span></label>
+            <label><input type="radio" name="n-muhit1" value="olmos"><span>Olmos</span></label>
+          </fieldset>
+          <fieldset class="seg seg--4">
+            <legend>Nur qayerga o‘tadi (pastki muhit)</legend>
+            <label><input type="radio" name="n-muhit2" value="havo"><span>Havo</span></label>
+            <label><input type="radio" name="n-muhit2" value="suv" checked><span>Suv</span></label>
+            <label><input type="radio" name="n-muhit2" value="shisha"><span>Shisha</span></label>
+            <label><input type="radio" name="n-muhit2" value="olmos"><span>Olmos</span></label>
+          </fieldset>
+
+          <div class="facts readout">
+            <div><b class="display" id="n-sinish">—</b><small>Sinish, θ₂</small></div>
+            <div><b class="display" id="n-kritik">—</b><small>Kritik burchak</small></div>
+            <div><b class="display" id="n-nisbat">—</b><small>Sindirish nisbati</small></div>
+          </div>
+
+          <p class="label lab__score" id="n-ball">Bajarildi: 0</p>
+          <p class="lab__msg" id="n-msg" role="status"></p>
+        </div>
       </div>
     </section>
 
@@ -357,6 +453,9 @@
   <script src="js/github.js" defer></script>
   <script src="js/kundalik.js" defer></script>
   <script src="js/lab.js" defer></script>
+  <script src="js/lab-mayatnik.js" defer></script>
+  <script src="js/lab-nur.js" defer></script>
+  <script src="js/lab-tablar.js" defer></script>
   <script src="js/terminal.js" defer></script>
 </body>
 </html>

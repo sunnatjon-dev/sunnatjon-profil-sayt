@@ -1123,3 +1123,72 @@ code {
 /* Qulaylik: terminal maydoni fokusda bo'lsa — butun oyna atrofida aniq chegara */
 .terminal:focus-within { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .terminal__line input { min-height: 28px; }
+
+
+/* =========================================================
+   10. LABORATORIYA: TABLAR VA YANGI TAJRIBALAR
+   ========================================================= */
+.lab[hidden] { display: none; }   /* display: grid "hidden"ni bosib ketmasin */
+
+.lab__tabs {
+  display: flex;
+  margin: -6px 0 26px;
+  border-bottom: 1px solid var(--rule);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.lab__tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  margin-bottom: -1px;
+  padding: 0 18px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.lab__tabs button:first-child { padding-left: 0; }
+.lab__tabs button small { color: var(--muted); font-size: var(--fs-xs); }
+.lab__tabs button:hover { color: var(--ink); }
+.lab__tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.lab__tabs button[aria-selected="true"] small { color: var(--ink); }
+
+/* Vazifa kartochkasi */
+.lab__task {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--frame);
+  border-left: 4px solid var(--cyan);
+  background: var(--field);
+}
+.lab__task b { color: var(--ink); font-size: var(--fs-md); font-weight: 600; line-height: 1.4; }
+.lab__score { margin-bottom: -8px; color: var(--ink); }
+#m-izoh b, .lab__stage .small b { color: var(--ink); font-weight: 600; }
+
+.seg--4 { grid-template-columns: repeat(4, 1fr); }
+.seg--4 span { font-size: var(--fs-sm); }
+
+/* Nur manbaini sudrash uchun */
+.lab__canvas--drag canvas { touch-action: none; cursor: grab; }
+.lab__canvas--drag canvas:active { cursor: grabbing; }
+
+@media (max-width: 680px) {
+  /* Telefonda: tablar uchta teng ustun, uzun nom ikki qatorga tushadi */
+  .lab__tabs { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; }
+  .lab__tabs button,
+  .lab__tabs button:first-child { justify-content: center; padding: 6px 4px; white-space: normal; text-align: center; line-height: 1.3; }
+  .lab__tabs button small { display: none; }
+  /* Grafiklar balandroq — tor ekranda ham yaxshi ko'rinsin */
+  .lab__canvas { aspect-ratio: 4 / 3; }
+  .lab__stage .label--row { flex-wrap: wrap; row-gap: 4px; }
+}

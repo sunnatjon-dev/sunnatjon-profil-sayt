@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fizika laboratoriyasi — Sunnatjon Gulboyev</title>
-  <meta name="description" content="To‘p otish tajribasi: burchak, tezlik va sayyorani tanlab, to‘pni nishonga tushiradigan interaktiv fizika simulyatsiyasi. JavaScript va Canvas.">
+  <meta name="description" content="Uchta interaktiv fizika tajribasi: to‘p otish, mayatnik va yorug‘lik sinishi. Haqiqiy formulalar, vazifalar va jonli grafiklar. JavaScript va Canvas.">
   <meta name="theme-color" content="#e1e1de" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
   <meta name="color-scheme" content="light dark">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="uz_UZ">
   <meta property="og:title" content="Fizika laboratoriyasi — Sunnatjon Gulboyev">
-  <meta property="og:description" content="Interaktiv to‘p otish tajribasi: JavaScript, Canvas va maktab fizikasi.">
+  <meta property="og:description" content="To‘p otish, mayatnik va yorug‘lik sinishi — JavaScript, Canvas va maktab fizikasi.">
   <meta property="og:url" content="https://sunnatjon-dev.github.io/sunnatjon-profil-sayt/loyihalar/fizika-laboratoriyasi.html">
   <meta property="og:site_name" content="Sunnatjon Gulboyev">
   <meta property="og:image" content="https://sunnatjon-dev.github.io/sunnatjon-profil-sayt/images/og-1200x630.jpg">
@@ -39,7 +39,7 @@
     <h1 class="mast__title case__title display">Fizika<br>laboratoriyasi</h1>
 
     <div class="hero">
-      <p class="hero__lead">Burchak, tezlik va sayyorani tanlab, to‘pni <em>nishonga</em> tushiradigan interaktiv tajriba.</p>
+      <p class="hero__lead">Uchta interaktiv tajriba: <em>to‘p otish</em>, mayatnik va yorug‘lik sinishi.</p>
       <div class="hero__side">
         <dl class="case__meta">
           <div><dt>Yil</dt><dd>2026</dd></div>
@@ -74,12 +74,26 @@
       <header class="panel__head"><span class="idx">→</span><h2 id="s-links">Havolalar</h2></header>
       <ul class="aside-list">
         <li><a href="../index.html#lab">Sinab ko‘rish</a><small>Bosh sahifadagi jonli demo</small></li>
-        <li><a href="https://github.com/sunnatjon-dev/sunnatjon-profil-sayt/blob/main/js/lab.js" target="_blank" rel="noopener">Manba kodi ↗</a><small><code>js/lab.js</code> · ≈340 qator</small></li>
+        <li><a href="https://github.com/sunnatjon-dev/sunnatjon-profil-sayt/blob/main/js/lab.js" target="_blank" rel="noopener">Manba kodi ↗</a><small><code>js/lab.js</code>, <code>lab-mayatnik.js</code>, <code>lab-nur.js</code></small></li>
       </ul>
     </aside>
 
+    <section class="panel c-8" aria-labelledby="s-tajribalar">
+      <header class="panel__head"><span class="idx">02</span><h2 id="s-tajribalar">Uchta tajriba</h2></header>
+      <h3>01 · To‘p otish</h3>
+      <p class="prose">Burchak, tezlik va sayyorani (Yer, Mars, Oy) tanlab, to‘pni nishonga tushirasiz. Masofa, balandlik va uchish vaqti formulalar bilan hisoblanadi.</p>
+      <h3>02 · Mayatnik</h3>
+      <p class="prose">Ip uzunligi, og‘ish burchagi va sayyorani tanlaysiz — sayt bir to‘liq tebranish vaqtini (davrni) o‘zi o‘lchaydi. Vazifa: davrni berilgan qiymatga keltirish. Eng qizig‘i: katta burchakda o‘lchangan davr maktab formulasidan uzun chiqadi, va sayt nega shundayligini tushuntiradi.</p>
+      <pre class="formula">Maktab formulasi   T = 2π · √(L / g)      (kichik burchaklar uchun)
+Aniq tenglama      θ'' = −(g / L) · sin θ   (RK4 usuli bilan yechiladi)</pre>
+      <h3>03 · Yorug‘lik sinishi</h3>
+      <p class="prose">Nurni havo, suv, shisha va olmos orasidan o‘tkazasiz. Nur manbaini sichqoncha yoki barmoq bilan sudrash mumkin. Zichroq muhitdan chiqishda burchak kritikdan oshsa — <b>to‘liq ichki qaytish</b> yuz beradi: optik tolalar shu hodisada ishlaydi.</p>
+      <pre class="formula">Snellius qonuni    n₁ · sin θ₁ = n₂ · sin θ₂
+Kritik burchak     sin θₖ = n₂ / n₁          (faqat n₁ > n₂ bo‘lsa)</pre>
+    </section>
+
     <section class="panel c-8" aria-labelledby="s2">
-      <header class="panel__head"><span class="idx">02</span><h2 id="s2">Qanday ishlaydi</h2></header>
+      <header class="panel__head"><span class="idx">03</span><h2 id="s2">To‘p otish qanday ishlaydi</h2></header>
       <p class="prose">Havo qarshiligini hisobga olmaymiz. Unda to‘pning harakati uchta formula bilan to‘liq tavsiflanadi:</p>
       <pre class="formula">Masofa     R = v² · sin 2θ / g
 Balandlik  H = (v · sin θ)² / 2g
@@ -93,7 +107,11 @@ Vaqt       T = 2 · v · sin θ / g</pre>
     </section>
 
     <section class="panel c-8" aria-labelledby="s3">
-      <header class="panel__head"><span class="idx">03</span><h2 id="s3">Qiyinchiliklar va yechimlar</h2></header>
+      <header class="panel__head"><span class="idx">04</span><h2 id="s3">Qiyinchiliklar va yechimlar</h2></header>
+      <h3>Mayatnik formulasi “yolg‘on gapiradi”</h3>
+      <p class="prose">T = 2π√(L/g) faqat kichik burchaklarda aniq. Shuning uchun mayatnik formuladan emas, haqiqiy harakat tenglamasidan har 1/600 soniyada RK4 usuli bilan hisoblanadi. Natija tekshirildi: 60° da o‘lchangan davr 2.15 s, aniq nazariy qiymat 2.153 s.</p>
+      <h3>Nurni barmoq bilan sudrash</h3>
+      <p class="prose">Sichqoncha ham, sensorli ekran ham bitta kod bilan ishlashi uchun <code>pointer</code> hodisalari ishlatildi. Barmoqning joyidan burchak <code>atan2</code> bilan topiladi, sudrash paytida sahifa aylanib ketmasligi uchun esa <code>touch-action: none</code> qo‘yildi.</p>
       <h3>Oyda to‘p 37 soniya uchadi</h3>
       <p class="prose">Oyda tortishish Yerdagidan 6 marta kuchsiz, shuning uchun haqiqiy vaqtda kutish zerikarli bo‘lardi. Har bir sayyora uchun animatsiya tezlashtiriladi: istalgan otish 2–3 soniyada ko‘rinadi, lekin otishlar orasidagi nisbat to‘g‘riligicha qoladi.</p>
       <h3>Grafik har xil sayyoraga sig‘ishi kerak</h3>
@@ -105,7 +123,7 @@ Vaqt       T = 2 · v · sin θ / g</pre>
     </section>
 
     <section class="panel c-8" aria-labelledby="s4">
-      <header class="panel__head"><span class="idx">04</span><h2 id="s4">Nimani o‘rgandim</h2></header>
+      <header class="panel__head"><span class="idx">05</span><h2 id="s4">Nimani o‘rgandim</h2></header>
       <!-- Bu bo'limni o'z so'zlaringiz bilan qayta yozing — bu sizning tajribangiz! -->
       <ul class="steps">
         <li>JavaScript’da <code>Math.sin</code> gradus emas, <b>radian</b> bilan ishlaydi — avval gradusni radianga o‘tkazish kerak.</li>

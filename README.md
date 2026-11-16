@@ -11,7 +11,7 @@
 - **Bosh qism** — kimligim bir jumlada, loyihalarga va Telegram’ga tugmalar, GitHub havolasi
 - **Men haqimda** — qisqa tanishuv va GitHub’dan **avtomatik** olinadigan haqiqiy raqamlar (commitlar, repolar, oxirgi faollik)
 - **Loyihalar** — har biri uchun alohida sahifa: maqsad, qanday ishlaydi, qiyinchiliklar, nimani o‘rgandim
-- **Fizika laboratoriyasi** — to‘p otish tajribasi: burchak, tezlik va sayyorani (Yer, Mars, Oy) tanlab, to‘pni nishonga tushirish
+- **Fizika laboratoriyasi** — uchta interaktiv tajriba: to‘p otish (Yer, Mars, Oy), mayatnik (davrni o‘lchash, RK4) va yorug‘lik sinishi (Snellius qonuni, to‘liq ichki qaytish); har birida vazifalar bor
 - **Dasturchi yo‘li** va **Ko‘nikmalar** — foizsiz, halol darajalar: tanishman / o‘rganyapman / rejada
 - **O‘rganish kundaligi** — nimani qachon o‘rganganim
 - **Interaktiv terminal** — `yordam`, `loyihalar`, `kundalik`, `hazil` kabi buyruqlar
@@ -27,7 +27,7 @@
 | `style.css` | Dizayn, ranglar, animatsiyalar |
 | `js/asosiy.js` | Umumiy qismlar: paydo bo‘lish, nusxalash, xabar shakli |
 | `js/github.js` | GitHub’dan haqiqiy raqamlar |
-| `js/lab.js` | Fizika laboratoriyasi |
+| `js/lab*.js` | Fizika laboratoriyasi: to‘p otish, mayatnik, yorug‘lik sinishi, tablar |
 | `js/kundalik.js` · `js/terminal.js` | Kundalik va interaktiv terminal |
 
 ## Mualliflik
