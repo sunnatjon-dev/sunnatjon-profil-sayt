@@ -292,8 +292,8 @@ document.querySelectorAll("[data-qr]").forEach((joy) => {
     text: joy.dataset.qr,
     width: 200,
     height: 200,
-    colorDark: "#1a0c0c",
-    colorLight: "#efe1c8",
+    colorDark: "#0b1428",
+    colorLight: "#e8f0ff",
     correctLevel: QRCode.CorrectLevel.M,
   });
 });
@@ -337,10 +337,10 @@ const buyruqlar = {
     ["t-out", "🎯 Maqsad: professional dasturchi bo‘lish"],
   ],
   qiziqishlar: () =>
-    [["Dasturlash", 70], ["Fizika", 60], ["Futbol", 50], ["Musiqa", 30]].map(([nom, foiz]) => [
-      "t-out",
-      nom.padEnd(12) + "█".repeat(foiz / 10) + "░".repeat(10 - foiz / 10) + " " + foiz + "%",
-    ]),
+    [["Futbol", 100], ["Dasturlash", 99], ["Mashina", 70], ["Fizika", 60], ["Musiqa", 50]].map(([nom, foiz]) => {
+      const toliq = Math.round(foiz / 10);   // 99% → 10 ta katak (yaxlitlaymiz, aks holda qator qisqarib qoladi)
+      return ["t-out", nom.padEnd(12) + "█".repeat(toliq) + "░".repeat(10 - toliq) + " " + foiz + "%"];
+    }),
   yol: () => [
     ["t-ok", "✔ 01 HTML"],
     ["t-ok", "✔ 02 CSS"],
@@ -349,7 +349,6 @@ const buyruqlar = {
     ["t-dim", "○ 05 Dasturchi 🚀"],
   ],
   aloqa: () => [
-    ["t-out", 'Telegram: <a href="https://t.me/sunnatjon_dev" target="_blank" rel="noopener">@sunnatjon_dev</a>', true],
     ["t-out", 'Gmail:    <a href="mailto:gulbayevsunnatjon@gmail.com">gulbayevsunnatjon@gmail.com</a>', true],
     ["t-out", 'Telefon:  <a href="tel:[telefon olib tashlandi]">[telefon olib tashlandi]</a>', true],
   ],
@@ -470,7 +469,7 @@ document.getElementById("yil").textContent = new Date().getFullYear();
 
 // ----- 17. Kodni o'qiyotgan dasturchilar uchun yashirin xabar (F12 → Console) -----
 console.log(
-  "%cSalom, dasturchi! 👋\n%cKodimni ko‘ryapsizmi? Bu mening birinchi loyiham. Telegram: @sunnatjon_dev",
-  "font-size:18px;font-weight:bold;color:#e0504a",
-  "font-size:13px;color:#efe1c8"
+  "%cSalom, dasturchi! 👋\n%cKodimni ko‘ryapsizmi? Bu mening birinchi loyiham. Gmail: gulbayevsunnatjon@gmail.com",
+  "font-size:18px;font-weight:bold;color:#4f9dff",
+  "font-size:13px;color:#e8f0ff"
 );

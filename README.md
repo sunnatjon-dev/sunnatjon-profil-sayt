@@ -10,7 +10,7 @@ Bo‘lajak dasturchining birinchi loyihasi: bir sahifali shaxsiy profil sayti.
 - **Qiziqishlarim** — foizlarda to‘ladigan kartochkalar
 - **Dasturchi yo‘lim** — HTML → CSS → JavaScript → Loyihalar → Dasturchi
 - **Interaktiv terminal** — `yordam`, `haqimda`, `qiziqishlar`, `hazil` kabi buyruqlarni tushunadi
-- **Aloqa** — Telegram, Gmail, QR kodlar va xabar yozish shakli
+- **Aloqa** — Gmail, telefon, QR kod va xabar yozish shakli
 - Orqa fonda harakatlanuvchi kodlar, grafiklar va mikrosxemalar (parallaks effekti)
 - Telefon, planshet va kompyuterga moslashgan dizayn
 
@@ -31,5 +31,4 @@ Hech qanday framework yoki o‘rnatish talab qilinmaydi — oddiy HTML, CSS va J
 
 ## Aloqa
 
-- Telegram: [@sunnatjon_dev](https://t.me/sunnatjon_dev)
 - Gmail: gulbayevsunnatjon@gmail.com
