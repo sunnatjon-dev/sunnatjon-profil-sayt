@@ -43,9 +43,9 @@
    Rangni o'zgartirmoqchi bo'lsangiz — faqat shu yerni o'zgartiring!
    ========================================================= */
 :root {
-  --paper: #e1e1de;           /* sahifa foni — och kulrang qog'oz */
-  --panel: #ececea;           /* panellar */
-  --field: #f6f6f4;           /* inputlar */
+  --paper: #d9dcff;           /* sahifa foni — lavanda (asosiy ko'k bilan bir oiladan) */
+  --panel: #eef0ff;           /* panellar — och lavanda */
+  --field: #f8f9ff;           /* inputlar va grafik maydoni */
   --ink: #111111;             /* asosiy qora */
   --text: #3d3d3b;            /* oddiy matn */
   --muted: #5c5c59;           /* xira matn (fonda ham, panelda ham kontrast ≥ 5:1) */
