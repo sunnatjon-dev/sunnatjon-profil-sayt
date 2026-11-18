@@ -108,6 +108,6 @@ document.getElementById("yil").textContent = new Date().getFullYear();
 // ----- 7. Kodni o'qiyotgan dasturchilar uchun yashirin xabar (F12 → Console) -----
 console.log(
   "%cSalom, dasturchi! 👋\n%cKodimni ko‘ryapsizmi? Bu mening birinchi loyiham. Gmail: gulbayevsunnatjon@gmail.com",
-  "font-size:18px;font-weight:bold;color:#2337ff",
+  "font-size:18px;font-weight:bold;color:#a78bfa",
   "font-size:13px;color:#888"
 );

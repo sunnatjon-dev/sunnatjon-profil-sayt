@@ -43,25 +43,28 @@
    Rangni o'zgartirmoqchi bo'lsangiz — faqat shu yerni o'zgartiring!
    ========================================================= */
 :root {
-  --paper: #d9dcff;           /* sahifa foni — lavanda (asosiy ko'k bilan bir oiladan) */
-  --panel: #eef0ff;           /* panellar — och lavanda */
-  --field: #f8f9ff;           /* inputlar va grafik maydoni */
-  --ink: #111111;             /* asosiy qora */
-  --text: #3d3d3b;            /* oddiy matn */
-  --muted: #52524f;           /* xira matn (rangli nur tushgan fonda ham kontrast ≥ 4.5:1) */
-  --frame: rgba(17, 17, 17, 0.55);   /* panel ramkasi */
-  --rule: rgba(17, 17, 17, 0.14);    /* ichki ingichka chiziqlar */
-  --grey: #a3a3a0;
-  --track: rgba(17, 17, 17, 0.1);    /* progress chizig'ining bo'sh qismi */
-  --code-bg: rgba(17, 17, 17, 0.08);
-  --hover: #ffffff;                  /* tugma ustiga kelganda */
-  --placeholder: #7d7d79;
-  --mark: rgba(35, 55, 255, 0.16);   /* asosiy rangning och varianti (fon uchun) */
+  --paper: #0a0612;           /* sahifa foni — deyarli qora binafsha ("kosmos") */
+  --panel: #130d1f;           /* panellar — to'q binafsha */
+  --field: #0e0918;           /* inputlar va grafik maydoni — paneldan biroz to'qroq */
+  --ink: #f2eeff;             /* asosiy yozuv — oq-lavanda */
+  --text: #c9c2dc;            /* oddiy matn (panelda 10.6:1) */
+  --muted: #9d95b5;           /* xira matn (panelda 6.5:1) */
+  --frame: rgba(167, 139, 250, 0.32);  /* panel ramkasi — binafsha chiziq */
+  --rule: rgba(167, 139, 250, 0.14);   /* ichki ingichka chiziqlar */
+  --grey: #5f5679;
+  --track: rgba(167, 139, 250, 0.16);  /* progress chizig'ining bo'sh qismi */
+  --code-bg: rgba(167, 139, 250, 0.14);
+  --hover: rgba(167, 139, 250, 0.12);  /* tugma ustiga kelganda */
+  --placeholder: #8a82a3;
+  --mark: rgba(139, 92, 246, 0.18);   /* urg'u rangining shaffof varianti */
 
-  /* Yagona urg'u rangi (Swiss qoidasi: bitta rang) — faqat bezak uchun, matnda emas */
-  --accent: #2337ff;          /* ASOSIY RANG — elektr-ko'k (Klein ko'ki). Fonda 5.2:1, oq yozuv bilan 6.9:1 kontrast */
-  --accent-dark: #1626d9;     /* tugma ustiga kelganda */
-  --accent-on-dark: #9aa6ff;  /* qora terminal ichida (u yerda to'q ko'k ko'rinmaydi) */
+  /* Urg'u rangi — binafsha (referensdagi "kosmik" uslub) */
+  --accent: #8b5cf6;          /* to'ldirishlar: nuqtalar, progress, surgichlar, grafikdagi to'p */
+  --accent-text: #a78bfa;     /* matn sifatida (fonda 7.3:1) */
+  --btn-from: #7c3aed;        /* tugma gradienti (oq yozuv bilan 5.6:1) */
+  --btn-to: #9333ea;          /* (oq yozuv bilan 5.2:1) */
+  --accent-on-dark: #c4b5fd;  /* qora terminal ichida */
+  --glow: rgba(139, 92, 246, 0.55);  /* porlash effekti */
 
   /* Yozuv o'lchamlari shkalasi — butun saytda faqat shular ishlatiladi */
   --fs-xs: 12px;     /* yorliqlar, mono yozuvlar */
@@ -78,9 +81,9 @@
   --pad: 24px;
   --gutter: clamp(16px, 4vw, 48px);
   --ease: cubic-bezier(.2, .8, .2, 1);
-  /* Sayt faqat yorug' rangda: qurilma qorong'i rejimda bo'lsa ham. "only" — brauzerlarga
-     (masalan, Android Chrome'ning "avto qorong'i rejimi"ga) saytni o'zi qoraytirmaslikni aytadi. */
-  color-scheme: only light;
+  /* Sayt hammada bir xil — to'q binafsha dizaynda. Brauzerning o'z elementlari
+     (surgich, skroll, kalendar) ham qorong'i ko'rinishda chiqadi. */
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -104,8 +107,8 @@ body {
   overflow-x: hidden;
 }
 
-/* Lavanda fon ustida yumshoq rangli yorug'lik: yuqori-chapda ko'k, o'ngda binafsha, pastda pushti.
-   Ekranga mahkamlangan (position: fixed) — aylantirganda ham bir xil turadi. Panellar ostida qoladi. */
+/* "Kosmik" fon: binafsha tumanliklar (nebula) + mayda yulduzlar. Ekranga mahkamlangan —
+   aylantirganda joyida turadi, panellar ostida qoladi. Yulduzlar — 900px li SVG bo'lagi, takrorlanadi. */
 body::before {
   content: "";
   position: fixed;
@@ -113,9 +116,10 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(60vw 48vw at 0% 0%, rgba(35, 55, 255, 0.13), transparent 70%),
-    radial-gradient(52vw 52vw at 100% 38%, rgba(168, 102, 255, 0.16), transparent 70%),
-    radial-gradient(46vw 40vw at 28% 100%, rgba(255, 128, 214, 0.10), transparent 70%);
+    radial-gradient(55vw 45vw at 100% 0%, rgba(124, 58, 237, 0.30), transparent 70%),
+    radial-gradient(45vw 45vw at 0% 45%, rgba(192, 38, 211, 0.14), transparent 70%),
+    radial-gradient(60vw 40vw at 50% 100%, rgba(76, 29, 149, 0.35), transparent 70%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><g fill='%23e9e2ff'><circle cx='0' cy='829' r='0.82' fill-opacity='0.30'/><circle cx='656' cy='479' r='0.86' fill-opacity='0.59'/><circle cx='680' cy='489' r='1.25' fill-opacity='0.53'/><circle cx='735' cy='218' r='0.91' fill-opacity='0.57'/><circle cx='628' cy='48' r='1.25' fill-opacity='0.44'/><circle cx='830' cy='727' r='0.64' fill-opacity='0.46'/><circle cx='831' cy='620' r='1.21' fill-opacity='0.50'/><circle cx='821' cy='818' r='0.91' fill-opacity='0.36'/><circle cx='753' cy='299' r='0.67' fill-opacity='0.34'/><circle cx='386' cy='265' r='1.53' fill-opacity='0.49'/><circle cx='656' cy='790' r='0.56' fill-opacity='0.33'/><circle cx='505' cy='458' r='0.96' fill-opacity='0.29'/><circle cx='818' cy='49' r='0.90' fill-opacity='0.37'/><circle cx='598' cy='832' r='1.07' fill-opacity='0.27'/><circle cx='365' cy='255' r='0.90' fill-opacity='0.41'/><circle cx='299' cy='478' r='1.18' fill-opacity='0.31'/><circle cx='816' cy='412' r='1.45' fill-opacity='0.53'/><circle cx='571' cy='465' r='1.06' fill-opacity='0.56'/><circle cx='846' cy='357' r='1.28' fill-opacity='0.32'/><circle cx='528' cy='316' r='0.86' fill-opacity='0.40'/><circle cx='715' cy='790' r='0.62' fill-opacity='0.63'/><circle cx='70' cy='366' r='0.67' fill-opacity='0.22'/><circle cx='897' cy='198' r='1.20' fill-opacity='0.26'/><circle cx='411' cy='534' r='0.65' fill-opacity='0.69'/><circle cx='796' cy='802' r='1.47' fill-opacity='0.68'/><circle cx='685' cy='248' r='0.51' fill-opacity='0.32'/><circle cx='68' cy='1' r='1.18' fill-opacity='0.31'/><circle cx='667' cy='440' r='1.26' fill-opacity='0.31'/><circle cx='794' cy='212' r='0.91' fill-opacity='0.67'/><circle cx='107' cy='440' r='0.50' fill-opacity='0.68'/><circle cx='573' cy='830' r='0.52' fill-opacity='0.68'/><circle cx='169' cy='872' r='1.12' fill-opacity='0.55'/><circle cx='240' cy='200' r='0.73' fill-opacity='0.49'/><circle cx='47' cy='692' r='1.27' fill-opacity='0.57'/><circle cx='448' cy='29' r='0.62' fill-opacity='0.69'/><circle cx='118' cy='619' r='1.48' fill-opacity='0.20'/><circle cx='795' cy='775' r='1.59' fill-opacity='0.70'/><circle cx='688' cy='378' r='0.77' fill-opacity='0.58'/><circle cx='794' cy='358' r='0.76' fill-opacity='0.40'/><circle cx='798' cy='503' r='0.89' fill-opacity='0.52'/><circle cx='661' cy='302' r='1.30' fill-opacity='0.41'/><circle cx='179' cy='281' r='1.58' fill-opacity='0.73'/><circle cx='569' cy='785' r='1.51' fill-opacity='0.29'/><circle cx='581' cy='122' r='1.05' fill-opacity='0.49'/><circle cx='694' cy='851' r='1.03' fill-opacity='0.28'/><circle cx='402' cy='149' r='1.23' fill-opacity='0.47'/><circle cx='505' cy='456' r='1.33' fill-opacity='0.38'/><circle cx='676' cy='23' r='0.83' fill-opacity='0.48'/><circle cx='182' cy='651' r='0.82' fill-opacity='0.31'/><circle cx='594' cy='386' r='0.58' fill-opacity='0.61'/><circle cx='741' cy='824' r='1.50' fill-opacity='0.55'/><circle cx='863' cy='23' r='1.34' fill-opacity='0.51'/><circle cx='652' cy='808' r='0.54' fill-opacity='0.25'/><circle cx='72' cy='97' r='0.59' fill-opacity='0.19'/><circle cx='545' cy='851' r='0.71' fill-opacity='0.25'/><circle cx='182' cy='607' r='0.77' fill-opacity='0.43'/><circle cx='895' cy='380' r='1.24' fill-opacity='0.61'/><circle cx='357' cy='375' r='0.57' fill-opacity='0.31'/><circle cx='727' cy='877' r='0.67' fill-opacity='0.69'/><circle cx='458' cy='110' r='0.73' fill-opacity='0.51'/><circle cx='153' cy='70' r='0.80' fill-opacity='0.54'/><circle cx='500' cy='433' r='1.59' fill-opacity='0.22'/><circle cx='372' cy='283' r='0.50' fill-opacity='0.18'/><circle cx='372' cy='82' r='0.76' fill-opacity='0.69'/><circle cx='700' cy='688' r='0.98' fill-opacity='0.65'/><circle cx='866' cy='721' r='1.23' fill-opacity='0.49'/><circle cx='313' cy='366' r='1.05' fill-opacity='0.45'/><circle cx='511' cy='650' r='1.23' fill-opacity='0.53'/><circle cx='656' cy='796' r='1.43' fill-opacity='0.72'/><circle cx='394' cy='438' r='1.55' fill-opacity='0.72'/><circle cx='322' cy='71' r='0.88' fill-opacity='0.67'/><circle cx='638' cy='664' r='1.55' fill-opacity='0.61'/><circle cx='186' cy='214' r='1.38' fill-opacity='0.24'/><circle cx='824' cy='720' r='1.20' fill-opacity='0.57'/><circle cx='482' cy='399' r='1.46' fill-opacity='0.49'/><circle cx='786' cy='244' r='1.26' fill-opacity='0.42'/><circle cx='356' cy='169' r='1.15' fill-opacity='0.31'/><circle cx='809' cy='740' r='0.87' fill-opacity='0.56'/><circle cx='790' cy='104' r='0.84' fill-opacity='0.69'/><circle cx='1' cy='119' r='0.94' fill-opacity='0.19'/></g></svg>") 0 0 / 900px 900px;
 }
 
 a { color: inherit; }
@@ -204,8 +208,8 @@ svg { display: block; }
   animation: pulse 2.4s infinite;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 1.5px var(--ink), 0 0 0 0 rgba(35, 55, 255, .5); }
-  60% { box-shadow: 0 0 0 1.5px var(--ink), 0 0 0 7px rgba(35, 55, 255, 0); }
+  0%, 100% { box-shadow: 0 0 0 1.5px var(--ink), 0 0 0 0 rgba(139, 92, 246, .6); }
+  60% { box-shadow: 0 0 0 1.5px var(--ink), 0 0 0 7px rgba(139, 92, 246, 0); }
 }
 
 .barcode { height: 34px; width: auto; fill: var(--ink); }
@@ -241,11 +245,12 @@ svg { display: block; }
 }
 .hero__lead em {
   font-style: normal;
-  color: var(--accent);   /* eng muhim so'zlar asosiy rangda */
+  color: var(--accent-text);   /* eng muhim so'zlar binafshada */
+  text-shadow: 0 0 28px var(--glow);   /* yengil porlash */
 }
 
 /* Sarlavha oxiridagi ko'k nuqta — saytning kichik "belgisi" */
-.mast__dot { color: var(--accent); }
+.mast__dot { color: var(--accent); text-shadow: 0 0 34px var(--glow); }
 .hero__side { display: grid; gap: 18px; }
 .status { font-size: var(--fs-xs); letter-spacing: 0.04em; text-transform: uppercase; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -293,6 +298,7 @@ svg { display: block; }
   padding: var(--pad);
   background: var(--panel);
   border: 1px solid var(--frame);
+  box-shadow: 0 24px 60px -34px rgba(124, 58, 237, 0.45);
   scroll-margin-top: 24px;
 }
 
@@ -304,7 +310,7 @@ svg { display: block; }
   left: -3px;
   width: 5px;
   height: 5px;
-  background: var(--ink);
+  background: var(--accent);
 }
 
 /* Panellarni bir-biriga ulovchi "sim" — oxirida kichik halqa */
@@ -624,7 +630,7 @@ code {
   cursor: pointer;
   transition: background-color .15s, color .15s, transform .15s;
 }
-.more:hover { background: var(--ink); color: var(--paper); }
+.more:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .more:active { transform: scale(0.96); }
 
 /* 009 — Fizika laboratoriyasi */
@@ -715,7 +721,7 @@ code {
   transition: background-color .15s, color .15s;
 }
 .seg label:hover span { background: var(--hover); }
-.seg input:checked + span { background: var(--ink); color: var(--paper); }
+.seg input:checked + span { background: var(--btn-from); color: #fff; }
 .seg input:focus-visible + span { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 .readout { margin-top: 0; padding-top: 0; }
@@ -729,7 +735,7 @@ code {
   color: var(--ink);
   box-shadow: inset 0 0 0 1px var(--frame);
 }
-.btn.btn--ghost:hover { background: var(--ink); color: var(--paper); }
+.btn.btn--ghost:hover { background: var(--hover); color: var(--ink); box-shadow: inset 0 0 0 1px var(--accent-text); }
 .lab__msg { min-height: 22px; margin-top: -8px; color: var(--ink); font-family: var(--font-mono); font-size: var(--fs-xs); }
 
 
@@ -742,8 +748,9 @@ code {
   margin-top: 16px;
   padding: 16px 18px;
   overflow-y: auto;
-  background: #121212;
+  background: #06030c;
   color: #e6e6e3;
+  border-color: var(--rule);
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
   line-height: 1.7;
@@ -783,7 +790,7 @@ code {
   cursor: pointer;
   transition: background-color .15s, color .15s, transform .15s;
 }
-.chips button:hover { background: var(--ink); color: var(--paper); }
+.chips button:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .chips button:active { transform: scale(0.96); }
 
 
@@ -831,7 +838,7 @@ code {
   cursor: pointer;
   transition: background-color .15s, color .15s, transform .15s;
 }
-.copy:hover { background: var(--ink); color: var(--paper); }
+.copy:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .copy:active { transform: scale(0.96); }
 .copy svg, .btn svg {
   width: 16px;
@@ -873,7 +880,7 @@ code {
 .field input:focus, .field textarea:focus {
   outline: none;
   border-color: var(--ink);
-  box-shadow: 0 0 0 3px rgba(35, 55, 255, 0.28);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.45);
 }
 .field textarea { min-height: 96px; }
 
@@ -885,7 +892,7 @@ code {
   min-height: 48px;
   padding: 0 24px;
   border: 0;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--btn-from), var(--btn-to));
   color: #fff;
   font-weight: 700;
   font-stretch: 125%;
@@ -897,7 +904,7 @@ code {
   transition: transform .15s, background-color .15s;
 }
 .btn svg { color: currentColor; transition: transform .2s var(--ease); }
-.btn:hover { background: var(--accent-dark); }
+.btn:hover { filter: brightness(1.12); box-shadow: 0 10px 34px -8px var(--glow); }
 .btn:hover svg { transform: translateX(3px); }
 .btn:active { transform: scale(0.96); }
 
@@ -927,8 +934,9 @@ code {
   bottom: 24px;
   z-index: 20;
   padding: 12px 20px;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: 0 0 0 1px var(--frame), 0 16px 40px -12px var(--glow);
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
   opacity: 0;

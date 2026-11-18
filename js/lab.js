@@ -144,7 +144,7 @@ function chiz() {
   ctx.lineWidth = 2;
   chiziq(CHET.chap, m.y(0) + 1, olcham.w - CHET.ong, m.y(0) + 1);
 
-  // 3) Nishon: ko'k maydoncha va bayroqcha
+  // 3) Nishon: binafsha maydoncha va bayroqcha
   const { x: nx, eni } = lab.nishon;
   const bayroqX = m.x(nx + eni / 2);
   ctx.fillStyle = ranglar.accent;
