@@ -28,7 +28,7 @@ const natijaEl = {
 const css = (nom) => getComputedStyle(document.documentElement).getPropertyValue(nom).trim();
 const ranglar = {};
 function ranglarniOl() {
-  ["ink", "muted", "rule", "grey", "cyan", "field"].forEach((nom) => (ranglar[nom] = css("--" + nom)));
+  ["ink", "muted", "rule", "grey", "accent", "field"].forEach((nom) => (ranglar[nom] = css("--" + nom)));
 }
 ranglarniOl();
 
@@ -144,10 +144,10 @@ function chiz() {
   ctx.lineWidth = 2;
   chiziq(CHET.chap, m.y(0) + 1, olcham.w - CHET.ong, m.y(0) + 1);
 
-  // 3) Nishon: moviy maydoncha va bayroqcha
+  // 3) Nishon: ko'k maydoncha va bayroqcha
   const { x: nx, eni } = lab.nishon;
   const bayroqX = m.x(nx + eni / 2);
-  ctx.fillStyle = ranglar.cyan;
+  ctx.fillStyle = ranglar.accent;
   ctx.strokeStyle = ranglar.ink;
   ctx.lineWidth = 1;
   ctx.fillRect(m.x(nx), m.y(0) - 6, m.x(nx + eni) - m.x(nx), 6);
@@ -204,7 +204,7 @@ function chiz() {
     const [x, y] = nuqta(u, u.t);
     ctx.beginPath();
     ctx.arc(m.x(x), m.y(y), 6, 0, Math.PI * 2);
-    ctx.fillStyle = ranglar.cyan;
+    ctx.fillStyle = ranglar.accent;
     ctx.fill();
     ctx.lineWidth = 1.5;
     ctx.stroke();

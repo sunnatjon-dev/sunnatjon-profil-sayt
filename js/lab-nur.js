@@ -72,7 +72,7 @@
   // --- Chizish ---
   let olcham = { w: 0, h: 0 };
 
-  // "#33e0d0" → "rgba(51, 224, 208, a)"
+  // "#2337ff" → "rgba(35, 55, 255, a)"
   function shaffof(hex, a) {
     const s = hex.replace("#", "");
     const [r, g, b] = [0, 2, 4].map((i) => parseInt(s.slice(i, i + 2), 16));
@@ -112,9 +112,9 @@
     ctx.font = "11px 'JetBrains Mono', monospace";
 
     // Ikki muhit: zichroq muhit to'qroq bo'yaladi
-    ctx.fillStyle = shaffof(ranglar.cyan, (hol.n1 - 1) * 0.16);
+    ctx.fillStyle = shaffof(ranglar.accent, (hol.n1 - 1) * 0.12);
     ctx.fillRect(0, 0, w, cy);
-    ctx.fillStyle = shaffof(ranglar.cyan, (hol.n2 - 1) * 0.16);
+    ctx.fillStyle = shaffof(ranglar.accent, (hol.n2 - 1) * 0.12);
     ctx.fillRect(0, cy, w, h - cy);
     ctx.strokeStyle = ranglar.ink; ctx.lineWidth = 1.5;
     ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(w, cy); ctx.stroke();
@@ -159,7 +159,7 @@
     ctx.fillStyle = ranglar.field; ctx.fill();
     ctx.strokeStyle = ranglar.ink; ctx.lineWidth = 1.5; ctx.stroke();
     ctx.beginPath(); ctx.arc(manba.x, manba.y, 4.5, 0, Math.PI * 2);
-    ctx.fillStyle = ranglar.cyan; ctx.fill();
+    ctx.fillStyle = ranglar.accent; ctx.fill();
   }
 
   // --- Natijalar va vazifa ---

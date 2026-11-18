@@ -148,7 +148,7 @@
     ctx.lineWidth = 1.5;
     ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(bx, by); ctx.stroke();
     ctx.beginPath(); ctx.arc(bx, by, 11, 0, Math.PI * 2);
-    ctx.fillStyle = ranglar.cyan; ctx.fill();
+    ctx.fillStyle = ranglar.accent; ctx.fill();
     ctx.lineWidth = 1.5; ctx.stroke();
     ctx.beginPath(); ctx.arc(ox, oy, 3, 0, Math.PI * 2); ctx.fillStyle = ranglar.ink; ctx.fill();
 
