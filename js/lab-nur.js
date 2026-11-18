@@ -201,8 +201,8 @@
     const quti = canvas.getBoundingClientRect();
     const dx = e.clientX - quti.left - quti.width / 2;
     const dy = quti.height / 2 - (e.clientY - quti.top);        // yuqoriga musbat
-    if (dy <= 0) return;                                        // manba faqat yuqori muhitda
-    burchakInput.value = Math.min(89, Math.round(gradus(Math.atan2(Math.abs(dx), dy))));
+    if (dy < 0) return;                                         // manba faqat yuqori muhitda (chegara ustida ham bo'ladi = 90°)
+    burchakInput.value = Math.min(90, Math.round(gradus(Math.atan2(Math.abs(dx), dy))));
     yangila();
   }
   canvas.addEventListener("pointerdown", (e) => { sudralmoqda = true; canvas.setPointerCapture(e.pointerId); sudrash(e); });
