@@ -36,7 +36,9 @@
   <!-- Asosiy shriftni oldindan yuklaymiz — sarlavha tezroq chiqadi -->
   <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
+  <!-- "?v=..." — versiya raqami: brauzer eski faylni xotirasidan olmasligi uchun.
+       style.css yoki js/ fayllarini o'zgartirsangiz, bu raqamni yangilang (masalan, bugungi sana). -->
+  <link rel="stylesheet" href="style.css?v=20261118">
 </head>
 <body>
 
@@ -449,13 +451,13 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <!-- Skriptlar mavzular bo'yicha bo'lingan; "defer" — sahifa tayyor bo'lgach, shu tartibda ishga tushadi -->
-  <script src="js/asosiy.js" defer></script>
-  <script src="js/github.js" defer></script>
-  <script src="js/kundalik.js" defer></script>
-  <script src="js/lab.js" defer></script>
-  <script src="js/lab-mayatnik.js" defer></script>
-  <script src="js/lab-nur.js" defer></script>
-  <script src="js/lab-tablar.js" defer></script>
-  <script src="js/terminal.js" defer></script>
+  <script src="js/asosiy.js?v=20261118" defer></script>
+  <script src="js/github.js?v=20261118" defer></script>
+  <script src="js/kundalik.js?v=20261118" defer></script>
+  <script src="js/lab.js?v=20261118" defer></script>
+  <script src="js/lab-mayatnik.js?v=20261118" defer></script>
+  <script src="js/lab-nur.js?v=20261118" defer></script>
+  <script src="js/lab-tablar.js?v=20261118" defer></script>
+  <script src="js/terminal.js?v=20261118" defer></script>
 </body>
 </html>

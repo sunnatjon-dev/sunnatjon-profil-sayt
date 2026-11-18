@@ -48,7 +48,7 @@
   --field: #f8f9ff;           /* inputlar va grafik maydoni */
   --ink: #111111;             /* asosiy qora */
   --text: #3d3d3b;            /* oddiy matn */
-  --muted: #5c5c59;           /* xira matn (fonda ham, panelda ham kontrast ≥ 5:1) */
+  --muted: #52524f;           /* xira matn (rangli nur tushgan fonda ham kontrast ≥ 4.5:1) */
   --frame: rgba(17, 17, 17, 0.55);   /* panel ramkasi */
   --rule: rgba(17, 17, 17, 0.14);    /* ichki ingichka chiziqlar */
   --grey: #a3a3a0;
@@ -102,6 +102,20 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* Lavanda fon ustida yumshoq rangli yorug'lik: yuqori-chapda ko'k, o'ngda binafsha, pastda pushti.
+   Ekranga mahkamlangan (position: fixed) — aylantirganda ham bir xil turadi. Panellar ostida qoladi. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60vw 48vw at 0% 0%, rgba(35, 55, 255, 0.13), transparent 70%),
+    radial-gradient(52vw 52vw at 100% 38%, rgba(168, 102, 255, 0.16), transparent 70%),
+    radial-gradient(46vw 40vw at 28% 100%, rgba(255, 128, 214, 0.10), transparent 70%);
 }
 
 a { color: inherit; }
