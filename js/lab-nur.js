@@ -210,8 +210,6 @@
   canvas.addEventListener("pointerup", () => { sudralmoqda = false; });
   canvas.addEventListener("pointercancel", () => { sudralmoqda = false; });
 
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => requestAnimationFrame(chiz));
-
   new ResizeObserver(() => {
     const dpr = window.devicePixelRatio || 1;
     const quti = canvas.getBoundingClientRect();

@@ -224,9 +224,6 @@
     if (e.detail !== "exp-mayatnik" && m.yuryapti) boshlash();
   });
 
-  // Qorong'i/yorug' rejim almashsa — qayta chizamiz (ranglar lab.js da yangilanadi)
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => requestAnimationFrame(chiz));
-
   // Canvas o'lchami (yashirin tabda 0 bo'ladi — ko'ringanda qayta o'lchanadi)
   new ResizeObserver(() => {
     const dpr = window.devicePixelRatio || 1;

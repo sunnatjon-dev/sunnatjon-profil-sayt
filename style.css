@@ -76,29 +76,9 @@
   --pad: 24px;
   --gutter: clamp(16px, 4vw, 48px);
   --ease: cubic-bezier(.2, .8, .2, 1);
-  color-scheme: light dark;
-}
-
-/* Qorong'i rejim — telefon yoki kompyuter qorong'i rejimda bo'lsa, avtomatik yoqiladi.
-   Faqat ranglar almashadi, qolgan hamma narsa o'sha-o'sha. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #141413;
-    --panel: #1c1c1b;
-    --field: #232322;
-    --ink: #ecece8;
-    --text: #c4c4bf;
-    --muted: #93938e;
-    --frame: rgba(236, 236, 232, 0.38);
-    --rule: rgba(236, 236, 232, 0.12);
-    --grey: #6e6e6a;
-    --track: rgba(236, 236, 232, 0.12);
-    --code-bg: rgba(236, 236, 232, 0.1);
-    --hover: #2a2a29;
-    --placeholder: #7e7e79;
-    --mark: rgba(51, 224, 208, 0.32);
-  }
-  .case__shot img { opacity: 0.92; }
+  /* Sayt faqat yorug' rangda: qurilma qorong'i rejimda bo'lsa ham. "only" — brauzerlarga
+     (masalan, Android Chrome'ning "avto qorong'i rejimi"ga) saytni o'zi qoraytirmaslikni aytadi. */
+  color-scheme: only light;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }

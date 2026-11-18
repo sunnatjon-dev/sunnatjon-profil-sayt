@@ -31,11 +31,6 @@ function ranglarniOl() {
   ["ink", "muted", "rule", "grey", "cyan", "field"].forEach((nom) => (ranglar[nom] = css("--" + nom)));
 }
 ranglarniOl();
-// Qorong'i/yorug' rejim almashsa — grafik ranglarini yangilab, qayta chizamiz
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-  ranglarniOl();
-  chiz();
-});
 
 const lab = {
   g: sayyoralar.yer,
